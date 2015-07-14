@@ -6,61 +6,25 @@
   
   <title>GCD常用方法 | 厌恶争执，不善言说</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="详细介绍参见：使用GCD - 唐巧的技术博客
-
-自动管理生命周期
-
-
-任务：执行操作
-队列：先进先出
-
-队列类型并发队列：
-可以让多个任务并发执行（自动开启多个线程同时执行）只能在异步方式中使用（dispatch_async）
-
-串行队列：
-让任务一个接一个执行（一个任务执行完成后，再执行下一个任务）
-
-同步方式：
-只能在 当前 线程中执行任务，不具务开启新线程的能力queue:队列 block:">
+  <meta name="description" content="详细介绍参见：http://blog.devtang.com/blog/2012/02/22/use-gcd/
+任务：执行操作队列：先进先出
+队列类型并发队列： 可以让多个任务并发执行（自动开启多个线程同时执行）只能在异步方式中使用（dispatch_async）串行队列： 让任务一个接一个执行（一个任务执行完成后，再执行下一个任务）
+同步方式：只能在 当前 线程中执行任务，不具务开启新线程的能力">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GCD常用方法">
 <meta property="og:url" content="https://popeyelau.github.io/2015/07/14/GCD常用方法/index.html">
 <meta property="og:site_name" content="厌恶争执，不善言说">
-<meta property="og:description" content="详细介绍参见：使用GCD - 唐巧的技术博客
-
-自动管理生命周期
-
-
-任务：执行操作
-队列：先进先出
-
-队列类型并发队列：
-可以让多个任务并发执行（自动开启多个线程同时执行）只能在异步方式中使用（dispatch_async）
-
-串行队列：
-让任务一个接一个执行（一个任务执行完成后，再执行下一个任务）
-
-同步方式：
-只能在 当前 线程中执行任务，不具务开启新线程的能力queue:队列 block:">
-<meta property="og:updated_time" content="2015-07-14T10:17:12.000Z">
+<meta property="og:description" content="详细介绍参见：http://blog.devtang.com/blog/2012/02/22/use-gcd/
+任务：执行操作队列：先进先出
+队列类型并发队列： 可以让多个任务并发执行（自动开启多个线程同时执行）只能在异步方式中使用（dispatch_async）串行队列： 让任务一个接一个执行（一个任务执行完成后，再执行下一个任务）
+同步方式：只能在 当前 线程中执行任务，不具务开启新线程的能力">
+<meta property="og:updated_time" content="2015-07-14T10:23:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCD常用方法">
-<meta name="twitter:description" content="详细介绍参见：使用GCD - 唐巧的技术博客
-
-自动管理生命周期
-
-
-任务：执行操作
-队列：先进先出
-
-队列类型并发队列：
-可以让多个任务并发执行（自动开启多个线程同时执行）只能在异步方式中使用（dispatch_async）
-
-串行队列：
-让任务一个接一个执行（一个任务执行完成后，再执行下一个任务）
-
-同步方式：
-只能在 当前 线程中执行任务，不具务开启新线程的能力queue:队列 block:">
+<meta name="twitter:description" content="详细介绍参见：http://blog.devtang.com/blog/2012/02/22/use-gcd/
+任务：执行操作队列：先进先出
+队列类型并发队列： 可以让多个任务并发执行（自动开启多个线程同时执行）只能在异步方式中使用（dispatch_async）串行队列： 让任务一个接一个执行（一个任务执行完成后，再执行下一个任务）
+同步方式：只能在 当前 线程中执行任务，不具务开启新线程的能力">
   
     <link rel="alternative" href="/atom.xml" title="厌恶争执，不善言说" type="application/atom+xml">
   
@@ -134,38 +98,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>详细介绍参见：<a href="http://blog.devtang.com/blog/2012/02/22/use-gcd/" target="_blank" rel="external">使用GCD - 唐巧的技术博客</a></p>
-<ul>
-<li>自动管理生命周期</li>
-</ul>
-<ul>
-<li>任务：执行操作</li>
-<li>队列：先进先出</li>
-</ul>
-<h3 id="队列类型">队列类型</h3><h5 id="并发队列：">并发队列：</h5><blockquote>
-<p>可以让多个任务并发执行（自动开启多个线程同时执行）只能在异步方式中使用（dispatch_async）</p>
-</blockquote>
-<h5 id="串行队列：">串行队列：</h5><blockquote>
-<p>让任务一个接一个执行（一个任务执行完成后，再执行下一个任务）</p>
-</blockquote>
-<h4 id="同步方式：">同步方式：</h4><ul>
-<li>只能在 当前 线程中执行任务，不具务开启新线程的能力<br>queue:队列 block:任务<br>dispatch_sync(dispatch_queue_t queue, ^(void)block)</li>
-</ul>
-<h4 id="异步方式：">异步方式：</h4><ul>
-<li>可以在新的线程中执行任务，具备开启新线程的能力<br>queue:队列 block:任务<br>dispatch_async(dispatch_queue_t queue, ^(void)block)</li>
-</ul>
-<blockquote>
-<h4 id="获取全局的并发队列">获取全局的并发队列</h4><p> <code>DISPATCH_QUEUE_PRIORITY_DEFAULT</code> 默认优先级 参数2 用不上都传<code>0</code><br><code>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</code></p>
-<h4 id="串行队列_手动创建">串行队列 手动创建</h4><p> <code>dispatch_queue_t queue = dispatch_queue_create(&quot;队列名称&quot;, NULL);</code></p>
-<h4 id="主队列">主队列</h4><p>（添加到主队列中的任务，会自动放在主线程中执行）<br><code>dispatch_queue_t queue = dispatch_get_main_queue();</code></p>
-</blockquote>
-<h4 id="异步_并发队列（一般同时开启多个线程）（最常用）">异步 并发队列（一般同时开启多个线程）（最常用）</h4><blockquote>
-<p>同时执行4个任务</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">dispatch_queue_t queue = dispatch_get_global_queue<span class="list">(<span class="keyword">DISPATCH_QUEUE_PRIORITY_DEFAULT</span>, <span class="number">0</span>)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">    //任务<span class="number">1</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">    //任务<span class="number">2</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">    //任务<span class="number">3</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">    //任务<span class="number">4</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">dispatch_get_main_queue</span><span class="list">()</span>, ^&#123;</span><br><span class="line">    //主线程刷新UI</span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>2.异步 串行队列（一般只开1个线程）<br>//按任务顺序执行  任务1—》任务2—》任务3—》任务4</p>
-<p>//串行队列dispatch_queue_t queue = dispatch_queue_create(“队列名称”, NULL);<br>//将任务添加到串行队列中 异步 执行<br>dispatch_async(queue, ^{<br>    //任务1<br>});<br>dispatch_async(queue, ^{<br>    //任务2<br>});<br>dispatch_async(queue, ^{<br>    //任务3<br>});<br>dispatch_async(queue, ^{<br>    //任务4<br>});</p>
-<p>*/</p>
+        <p>详细介绍参见：<a href="http://blog.devtang.com/blog/2012/02/22/use-gcd/" target="_blank" rel="external">http://blog.devtang.com/blog/2012/02/22/use-gcd/</a></p>
+<p>任务：执行操作<br>队列：先进先出</p>
+<p>队列类型<br>并发队列： 可以让多个任务并发执行（自动开启多个线程同时执行）只能在异步方式中使用（dispatch_async）<br>串行队列： 让任务一个接一个执行（一个任务执行完成后，再执行下一个任务）</p>
+<p>同步方式：只能在 当前 线程中执行任务，不具务开启新线程的能力<br>queue:队列 block:任务<br>dispatch_sync(dispatch_queue_t queue, ^(void)block)</p>
+<p>异步方式：可以在新的线程中执行任务，具备开启新线程的能力<br>queue:队列 block:任务<br>dispatch_async(dispatch_queue_t queue, ^(void)block)</p>
+<p>获取全局的并发队列<br>参数1 DISPATCH_QUEUE_PRIORITY_DEFAULT 默认优先级，<br>参数2 用不上都传0</p>
+<p>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</p>
+<p>串行队列 手动创建<br>dispatch_queue_t queue = dispatch_queue_create(“队列名称”, NULL);</p>
+<p>主队列（添加到主队列中的任务，会自动放在主线程中执行）<br>dispatch_queue_t queue = dispatch_get_main_queue();</p>
+<p>异步 并发队列（一般同时开启多个线程）（最常用）</p>
+<p>同时执行4个任务<br>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);<br>dispatch_async(queue, ^{<br>    //任务1<br>});<br>dispatch_async(queue, ^{<br>    //任务2<br>});<br>dispatch_async(queue, ^{<br>    //任务3<br>});<br>dispatch_async(queue, ^{<br>    //任务4<br>});<br>dispatch_async(dispatch_get_main_queue(), ^{<br>    //主线程刷新UI<br>});</p>
+<p>异步 串行队列（一般只开1个线程）<br>按任务顺序执行  任务1—》任务2—》任务3—》任务4</p>
+<p>串行队列dispatch_queue_t queue = dispatch_queue_create(“队列名称”, NULL);<br>将任务添加到串行队列中 异步 执行<br>dispatch_async(queue, ^{<br>    //任务1<br>});<br>dispatch_async(queue, ^{<br>    //任务2<br>});<br>dispatch_async(queue, ^{<br>    //任务3<br>});<br>dispatch_async(queue, ^{<br>    //任务4<br>});</p>
 <ul>
 <li><p>(void)touchesBegan:(NSSet<em>)touches withEvent:(UIEvent</em>)event<br>{</p>
 <p>  //常见用法 异步线程执行耗时操作 主线程刷新UI<br>  dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);<br>  dispatch_async(queue, ^{</p>
@@ -241,39 +186,53 @@ image2 = [<span class="built_in">UIImage</span> imageWithData:data];
 </code></pre><p>  });<br>}</p>
 </li>
 </ul>
-<p>/<em><br>另外，GCD还有一些高级用法，例如让后台2个线程并行执行，然后等2个线程都结束后，再汇总执行结果。<br>这个可以用dispatch_group, dispatch_group_async 和 dispatch_group_notify来实现，示例如下：
-</em>/<br>    dispatch_group_t group = dispatch_group_create(); //队列组<br>    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);//全局并发队列<br>    dispatch_group_async(group, queue, ^{<br>        NSLog(@”并行执行线程1”);<br>    });<br>    dispatch_group_async(group, queue, ^{<br>        NSLog(@”并行执行线程1”);<br>    });<br>    dispatch_group_notify(group, queue, ^{<br>        NSLog(@”队列组任务完成 合并结果”);<br>    });</p>
-<p>//发送验证码30秒内禁用</p>
-<ul>
-<li><p>(void)startTime<br>{<br>  __block int timeout = 30; //倒计时时间<br>  dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);<br>  dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);<br>  dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0 * NSEC_PER_SEC, 0); //每秒执行<br>  dispatch_source_set_event_handler(_timer, ^{</p>
-<pre><code><span class="keyword">if</span> (timeout &lt;= <span class="number">0</span>) { <span class="comment">//倒计时结束，关闭</span>
-    dispatch_source_cancel(_timer);
-    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^{
-        <span class="comment">//设置界面的按钮显示 根据自己需求设置</span>
-        [<span class="keyword">self</span><span class="variable">.btnSend</span> setTitle:<span class="string">@"发送"</span> forState:<span class="built_in">UIControlStateNormal</span>];
-        <span class="keyword">self</span><span class="variable">.btnSend</span><span class="variable">.userInteractionEnabled</span> = <span class="literal">YES</span>;
-    });
-}
-<span class="keyword">else</span> {
-    <span class="keyword">int</span> seconds = timeout % <span class="number">60</span>;
-    <span class="built_in">NSString</span>* strTime = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%.2d"</span>, seconds];
-    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^{
-        <span class="comment">//设置界面的按钮显示 根据自己需求设置</span>
-        [<span class="keyword">self</span><span class="variable">.btnSend</span> setTitle:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@秒后重新发送"</span>, strTime] forState:<span class="built_in">UIControlStateNormal</span>];
-        <span class="keyword">self</span><span class="variable">.btnSend</span><span class="variable">.userInteractionEnabled</span> = <span class="literal">NO</span>;
+<p>另外，GCD还有一些高级用法，例如让后台2个线程并行执行，然后等2个线程都结束后，再汇总执行结果。<br>这个可以用dispatch_group, dispatch_group_async 和 dispatch_group_notify来实现，示例如下：</p>
+<pre><code>dispatch_group_t group = dispatch_group_create<span class="list">()</span><span class="comment">; //队列组</span>
+dispatch_queue_t queue = dispatch_get_global_queue<span class="list">(<span class="keyword">DISPATCH_QUEUE_PRIORITY_DEFAULT</span>, <span class="number">0</span>)</span><span class="comment">;//全局并发队列</span>
+dispatch_group_async<span class="list">(<span class="keyword">group</span>, queue, ^{
+    NSLog<span class="list">(@<span class="string">"并行执行线程1"</span>)</span><span class="comment">;</span>
+})</span><span class="comment">;</span>
+dispatch_group_async<span class="list">(<span class="keyword">group</span>, queue, ^{
+    NSLog<span class="list">(@<span class="string">"并行执行线程1"</span>)</span><span class="comment">;</span>
+})</span><span class="comment">;   </span>
+dispatch_group_notify<span class="list">(<span class="keyword">group</span>, queue, ^{
+    NSLog<span class="list">(@<span class="string">"队列组任务完成 合并结果"</span>)</span><span class="comment">;</span>
+})</span><span class="comment">;</span>
+</code></pre><p>发送验证码30秒内禁用</p>
+<p>-(void)startTime<br>{</p>
+<pre><code>__block <span class="keyword">int</span> timeout = <span class="number">30</span>; <span class="comment">//倒计时时间</span>
+<span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);
+dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, <span class="number">0</span>, <span class="number">0</span>, queue);
+dispatch_source_set_timer(_timer, dispatch_walltime(<span class="literal">NULL</span>, <span class="number">0</span>), <span class="number">1.0</span> * <span class="built_in">NSEC_PER_SEC</span>, <span class="number">0</span>); <span class="comment">//每秒执行</span>
+dispatch_source_set_event_handler(_timer, ^{
+    <span class="keyword">if</span> (timeout &lt;= <span class="number">0</span>) { <span class="comment">//倒计时结束，关闭</span>
+        dispatch_source_cancel(_timer);
+        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^{
+            <span class="comment">//设置界面的按钮显示 根据自己需求设置</span>
+            [<span class="keyword">self</span><span class="variable">.btnSend</span> setTitle:<span class="string">@"发送"</span> forState:<span class="built_in">UIControlStateNormal</span>];
+            <span class="keyword">self</span><span class="variable">.btnSend</span><span class="variable">.userInteractionEnabled</span> = <span class="literal">YES</span>;
+        });
+    }
+    <span class="keyword">else</span> {
+        <span class="keyword">int</span> seconds = timeout % <span class="number">60</span>;
+        <span class="built_in">NSString</span>* strTime = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%.2d"</span>, seconds];
+        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^{
+            <span class="comment">//设置界面的按钮显示 根据自己需求设置</span>
+            [<span class="keyword">self</span><span class="variable">.btnSend</span> setTitle:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@秒后重新发送"</span>, strTime] forState:<span class="built_in">UIControlStateNormal</span>];
+            <span class="keyword">self</span><span class="variable">.btnSend</span><span class="variable">.userInteractionEnabled</span> = <span class="literal">NO</span>;
 
-    });
-    timeout--;
-}
-</code></pre><p>  });<br>  dispatch_resume(_timer);<br>}</p>
-</li>
-</ul>
+        });
+        timeout--;
+    }
+});
+dispatch_resume(_timer);
+</code></pre><p>}</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://popeyelau.github.io/2015/07/14/GCD常用方法/" data-id="cic36osg900000awrhpvhjqi2" class="article-share-link" data-share="baidu">分享到</a>
+        <a data-url="https://popeyelau.github.io/2015/07/14/GCD常用方法/" data-id="cic36ye5t00002wwrtg7rd8fy" class="article-share-link" data-share="baidu">分享到</a>
       
 
       
