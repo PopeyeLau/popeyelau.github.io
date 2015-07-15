@@ -3,17 +3,47 @@
 <head>
   <meta charset="utf-8">
   
-  <title>厌恶争执，不善言说</title>
+  <title>Masonry初上手 | 厌恶争执，不善言说</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="厌恶争执，不善言说">
-<meta property="og:url" content="https://popeyelau.github.io/index.html">
+  <meta name="description" content="参考文档
+* https://github.com/SnapKit/Masonry
+* http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/
+* http://tutuge.me/2015/05/23/autolayout-example-with-masonry/
+
+实现效果
+竖屏效果图
+横屏效果图
+
+详细代码1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Masonry初上手">
+<meta property="og:url" content="https://popeyelau.github.io/2015/07/15/Masonry初上手/index.html">
 <meta property="og:site_name" content="厌恶争执，不善言说">
-<meta property="og:description">
+<meta property="og:description" content="参考文档
+* https://github.com/SnapKit/Masonry
+* http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/
+* http://tutuge.me/2015/05/23/autolayout-example-with-masonry/
+
+实现效果
+竖屏效果图
+横屏效果图
+
+详细代码1">
+<meta property="og:image" content="https://popeyelau.github.io/../images/masonry-01.png">
+<meta property="og:image" content="https://popeyelau.github.io/../images/masonry-02.png">
+<meta property="og:updated_time" content="2015-07-15T15:49:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="厌恶争执，不善言说">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Masonry初上手">
+<meta name="twitter:description" content="参考文档
+* https://github.com/SnapKit/Masonry
+* http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/
+* http://tutuge.me/2015/05/23/autolayout-example-with-masonry/
+
+实现效果
+竖屏效果图
+横屏效果图
+
+详细代码1">
   
     <link rel="alternative" href="/atom.xml" title="厌恶争执，不善言说" type="application/atom+xml">
   
@@ -184,9 +214,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-Masonry初上手" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Masonry初上手" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2015/07/15/Masonry初上手/" class="article-date">
@@ -202,12 +230,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/15/Masonry初上手/">Masonry初上手</a>
+    <h1 class="article-title" itemprop="name">
+      Masonry初上手
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-Autolayout/">iOS Autolayout</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -225,109 +264,62 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-Autolayout/">iOS Autolayout</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/14/GCD常用方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">GCD常用方法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
-
-
-
-
-
-  
-    <article id="post-GCD常用方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/14/GCD常用方法/" class="article-date">
-  	<time datetime="2015-07-14T10:16:10.000Z" itemprop="datePublished">2015-07-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/14/GCD常用方法/">GCD常用方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>详细介绍参见：<a href="http://blog.devtang.com/blog/2012/02/22/use-gcd/" target="_blank" rel="external">http://blog.devtang.com/blog/2012/02/22/use-gcd/</a></p>
-<p>任务：执行操作<br>队列：先进先出</p>
-<p>队列类型<br>并发队列： 可以让多个任务并发执行（自动开启多个线程同时执行）只能在异步方式中使用（dispatch_async）<br>串行队列： 让任务一个接一个执行（一个任务执行完成后，再执行下一个任务）</p>
-<p>同步方式：只能在 当前 线程中执行任务，不具务开启新线程的能力</p>
-<p>queue:队列 block:任务<br><code>dispatch_sync(dispatch_queue_t queue, ^(void)block)</code></p>
-<p>异步方式：可以在新的线程中执行任务，具备开启新线程的能力</p>
-<p>queue:队列 block:任务<br><code>dispatch_async(dispatch_queue_t queue, ^(void)block)</code></p>
-<p>获取全局的并发队列<br>参数1 <code>DISPATCH_QUEUE_PRIORITY_DEFAULT</code> 默认优先级<br>参数2 用不上都传0</p>
-<p><code>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</code></p>
-<p>串行队列 手动创建<br><code>dispatch_queue_t queue = dispatch_queue_create(&quot;队列名称&quot;, NULL);</code></p>
-<p>主队列（添加到主队列中的任务，会自动放在主线程中执行）<br><code>dispatch_queue_t queue = dispatch_get_main_queue();</code></p>
-<p>异步 并发队列（一般同时开启多个线程）（最常用）</p>
-<p>同时执行4个任务<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">dispatch_queue_t queue = dispatch_get_global_queue<span class="list">(<span class="keyword">DISPATCH_QUEUE_PRIORITY_DEFAULT</span>, <span class="number">0</span>)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">    //任务<span class="number">1</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">    //任务<span class="number">2</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">    //任务<span class="number">3</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">    //任务<span class="number">4</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">dispatch_get_main_queue</span><span class="list">()</span>, ^&#123;</span><br><span class="line">    //主线程刷新UI</span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
-<p>异步 串行队列（一般只开1个线程）<br>按任务顺序执行  任务1—》任务2—》任务3—》任务4</p>
-<p>串行队列<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">dispatch_queue_t queue = dispatch_queue_create<span class="list">(<span class="string">"com.popeye.jobs"</span>, NULL)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">    NSLog<span class="list">(@<span class="string">"执行任务1"</span>)</span><span class="comment">;</span></span><br><span class="line">    </span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">     NSLog<span class="list">(@<span class="string">"执行任务2"</span>)</span><span class="comment">;</span></span><br><span class="line">    </span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">     NSLog<span class="list">(@<span class="string">"执行任务3"</span>)</span><span class="comment">;</span></span><br><span class="line">    [NSThread sleepForTimeInterval:<span class="number">5</span>]<span class="comment">;</span></span><br><span class="line">    </span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">     NSLog<span class="list">(@<span class="string">"执行任务4"</span>)</span><span class="comment">;</span></span><br><span class="line">    </span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">dispatch_get_main_queue</span><span class="list">()</span>, ^&#123;</span><br><span class="line">    self.imageView.image = [UIImage  imageNamed:@<span class="string">"win"</span>]<span class="comment">;</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
-<p>常见用法 异步线程执行耗时操作 主线程刷新UI</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span>*)touches withEvent:(<span class="built_in">UIEvent</span>*)event</span><br><span class="line">&#123;</span><br><span class="line">   </span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(queue, ^&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"进入异步线程"</span>);</span><br><span class="line">        <span class="built_in">NSData</span>* data = [<span class="built_in">NSData</span> dataWithContentsOfURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://img4.duitang.com/uploads/item/201305/17/20130517130158_ha8AZ.jpeg"</span>]];</span><br><span class="line">        <span class="built_in">UIImage</span>* image = [<span class="built_in">UIImage</span> imageWithData:data];</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"图片加载完毕"</span>);</span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line"></span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"进入主线程"</span>);</span><br><span class="line">            <span class="keyword">self</span><span class="variable">.imageView</span><span class="variable">.image</span> = image;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"主线程刷新完毕"</span>);</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;);   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>//延时执行</p>
-<p>//1.会卡住线程<br><code>[NSThread sleepForTimeInterval:5];</code><br>//2.(会继续往下执行，不会卡住线程) 方法在哪个线程 就会在哪个线程执行<br><code>[self performSelector:@selector(download) withObject:nil afterDelay:5];</code><br>//3.GCD 5秒后在主线程执行<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dispatch_after<span class="params">(dispatch_time<span class="params">(DISPATCH_TIME_NOW, <span class="params">(int64_t)</span><span class="params">(<span class="number">5</span> * NSEC_PER_SEC)</span>)</span>, dispatch_get_main_queue<span class="params">()</span>, ^&#123;</span><br><span class="line">    NSLog<span class="params">(@<span class="string">"download"</span>)</span>;</span><br><span class="line">&#125;)</span>;</span><br></pre></td></tr></table></figure></p>
-<p>//5秒后开启新线程执行<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dispatch_after<span class="params">(dispatch_time<span class="params">(DISPATCH_TIME_NOW, <span class="params">(int64_t)</span><span class="params">(<span class="number">5</span> * NSEC_PER_SEC)</span>)</span>,  dispatch_get_global_queue<span class="params">(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>)</span>, ^&#123;</span><br><span class="line">    NSLog<span class="params">(@<span class="string">"download"</span>)</span>;</span><br><span class="line">&#125;)</span>;</span><br></pre></td></tr></table></figure></p>
-<p>//程序运行期间只执行一次<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> onceToken;</span><br><span class="line"><span class="built_in">dispatch_once</span>(&amp;onceToken, ^&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"我只执行一次"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>//队列组<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 1.创建队列组</span></span><br><span class="line">    dispatch_group_t group = dispatch_group_create();</span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 2.下载图片1</span></span><br><span class="line">    __block <span class="built_in">UIImage</span> *image1 = <span class="literal">nil</span>;</span><br><span class="line">    dispatch_group_async(group, queue, ^&#123;</span><br><span class="line">        <span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://g.hiphotos.baidu.com/image/pic/item/f2deb48f8c5494ee460de6182ff5e0fe99257e80.jpg"</span>];</span><br><span class="line">        <span class="built_in">NSData</span> *data = [<span class="built_in">NSData</span> dataWithContentsOfURL:url];</span><br><span class="line">        image1 = [<span class="built_in">UIImage</span> imageWithData:data];</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3.下载图片2</span></span><br><span class="line">    __block <span class="built_in">UIImage</span> *image2 = <span class="literal">nil</span>;</span><br><span class="line">    dispatch_group_async(group, queue, ^&#123;</span><br><span class="line">        <span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://su.bdimg.com/static/superplus/img/logo_white_ee663702.png"</span>];</span><br><span class="line">        <span class="built_in">NSData</span> *data = [<span class="built_in">NSData</span> dataWithContentsOfURL:url];</span><br><span class="line">        image2 = [<span class="built_in">UIImage</span> imageWithData:data];</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 4.合并图片 (保证执行完组里面的所有任务之后，再执行notify函数里面的block)</span></span><br><span class="line">    dispatch_group_notify(group, queue, ^&#123;</span><br><span class="line">        <span class="comment">// 开启一个位图上下文</span></span><br><span class="line">        <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(image1<span class="variable">.size</span>, <span class="literal">NO</span>, <span class="number">0.0</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 绘制第1张图片</span></span><br><span class="line">        <span class="built_in">CGFloat</span> image1W = image1<span class="variable">.size</span><span class="variable">.width</span>;</span><br><span class="line">        <span class="built_in">CGFloat</span> image1H = image1<span class="variable">.size</span><span class="variable">.height</span>;</span><br><span class="line">        [image1 drawInRect:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, image1W, image1H)];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 绘制第2张图片</span></span><br><span class="line">        <span class="built_in">CGFloat</span> image2W = image2<span class="variable">.size</span><span class="variable">.width</span> * <span class="number">0.5</span>;</span><br><span class="line">        <span class="built_in">CGFloat</span> image2H = image2<span class="variable">.size</span><span class="variable">.height</span> * <span class="number">0.5</span>;</span><br><span class="line">        <span class="built_in">CGFloat</span> image2Y = image1H - image2H;</span><br><span class="line">        [image2 drawInRect:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, image2Y, image2W, image2H)];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 得到上下文中的图片</span></span><br><span class="line">        <span class="built_in">UIImage</span> *fullImage = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 结束上下文</span></span><br><span class="line">        <span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 5.回到主线程显示图片</span></span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            <span class="keyword">self</span><span class="variable">.imageView</span><span class="variable">.image</span> = fullImage;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>另外，GCD还有一些高级用法，例如让后台2个线程并行执行，然后等2个线程都结束后，再汇总执行结果。<br>这个可以用dispatch_group, dispatch_group_async 和 dispatch_group_notify来实现，示例如下：<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dispatch_group_t group = dispatch_group_create<span class="list">()</span><span class="comment">; //队列组</span></span><br><span class="line">dispatch_queue_t queue = dispatch_get_global_queue<span class="list">(<span class="keyword">DISPATCH_QUEUE_PRIORITY_DEFAULT</span>, <span class="number">0</span>)</span><span class="comment">;//全局并发队列</span></span><br><span class="line">dispatch_group_async<span class="list">(<span class="keyword">group</span>, queue, ^&#123;</span><br><span class="line">    NSLog<span class="list">(@<span class="string">"并行执行线程1"</span>)</span><span class="comment">;</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_group_async<span class="list">(<span class="keyword">group</span>, queue, ^&#123;</span><br><span class="line">    NSLog<span class="list">(@<span class="string">"并行执行线程1"</span>)</span><span class="comment">;</span></span><br><span class="line">&#125;)</span><span class="comment">;   </span></span><br><span class="line">dispatch_group_notify<span class="list">(<span class="keyword">group</span>, queue, ^&#123;</span><br><span class="line">    NSLog<span class="list">(@<span class="string">"队列组任务完成 合并结果"</span>)</span><span class="comment">;</span></span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
-<p>发送验证码30秒内禁用<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)startTime</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    __block <span class="keyword">int</span> timeout = <span class="number">30</span>; <span class="comment">//倒计时时间</span></span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, <span class="number">0</span>, <span class="number">0</span>, queue);</span><br><span class="line">    dispatch_source_set_timer(_timer, dispatch_walltime(<span class="literal">NULL</span>, <span class="number">0</span>), <span class="number">1.0</span> * <span class="built_in">NSEC_PER_SEC</span>, <span class="number">0</span>); <span class="comment">//每秒执行</span></span><br><span class="line">    dispatch_source_set_event_handler(_timer, ^&#123;</span><br><span class="line">        <span class="keyword">if</span> (timeout &lt;= <span class="number">0</span>) &#123; <span class="comment">//倒计时结束，关闭</span></span><br><span class="line">            dispatch_source_cancel(_timer);</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="comment">//设置界面的按钮显示 根据自己需求设置</span></span><br><span class="line">                [<span class="keyword">self</span><span class="variable">.btnSend</span> setTitle:<span class="string">@"发送"</span> forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">                <span class="keyword">self</span><span class="variable">.btnSend</span><span class="variable">.userInteractionEnabled</span> = <span class="literal">YES</span>;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> seconds = timeout % <span class="number">60</span>;</span><br><span class="line">            <span class="built_in">NSString</span>* strTime = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%.2d"</span>, seconds];</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="comment">//设置界面的按钮显示 根据自己需求设置</span></span><br><span class="line">                [<span class="keyword">self</span><span class="variable">.btnSend</span> setTitle:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@秒后重新发送"</span>, strTime] forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">                <span class="keyword">self</span><span class="variable">.btnSend</span><span class="variable">.userInteractionEnabled</span> = <span class="literal">NO</span>;</span><br><span class="line"></span><br><span class="line">            &#125;);</span><br><span class="line">            timeout--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    dispatch_resume(_timer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Masonry初上手" data-title="Masonry初上手" data-url="https://popeyelau.github.io/2015/07/15/Masonry初上手/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -351,8 +343,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
