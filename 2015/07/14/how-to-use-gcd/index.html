@@ -7,8 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="详细介绍参见：http://blog.devtang.com/blog/2012/02/22/use-gcd/
 
-任务：执行操作
-队列：先进先出
 
 
 队列类型
@@ -24,15 +22,14 @@
 
 
 
-同步方式：只能在 当前 线程中执行">
+同步方式：只能在当前线程中执行任务，不具务开启新线程的能力
+dis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GCD常用方法">
 <meta property="og:url" content="https://popeyelau.github.io/2015/07/14/how-to-use-gcd/index.html">
 <meta property="og:site_name" content="厌恶争执，不善言说">
 <meta property="og:description" content="详细介绍参见：http://blog.devtang.com/blog/2012/02/22/use-gcd/
 
-任务：执行操作
-队列：先进先出
 
 
 队列类型
@@ -48,14 +45,13 @@
 
 
 
-同步方式：只能在 当前 线程中执行">
-<meta property="og:updated_time" content="2015-07-15T16:10:40.000Z">
+同步方式：只能在当前线程中执行任务，不具务开启新线程的能力
+dis">
+<meta property="og:updated_time" content="2015-07-16T01:36:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCD常用方法">
 <meta name="twitter:description" content="详细介绍参见：http://blog.devtang.com/blog/2012/02/22/use-gcd/
 
-任务：执行操作
-队列：先进先出
 
 
 队列类型
@@ -71,7 +67,8 @@
 
 
 
-同步方式：只能在 当前 线程中执行">
+同步方式：只能在当前线程中执行任务，不具务开启新线程的能力
+dis">
   
     <link rel="alternative" href="/atom.xml" title="厌恶争执，不善言说" type="application/atom+xml">
   
@@ -283,11 +280,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>详细介绍参见：<a href="http://blog.devtang.com/blog/2012/02/22/use-gcd/" target="_blank" rel="external">http://blog.devtang.com/blog/2012/02/22/use-gcd/</a></p>
-<ul>
-<li><h4 id="任务：执行操作">任务：执行操作</h4></li>
-<li><h4 id="队列：先进先出">队列：先进先出</h4></li>
+        <ul>
+<li>详细介绍参见：<a href="http://blog.devtang.com/blog/2012/02/22/use-gcd/" target="_blank" rel="external">http://blog.devtang.com/blog/2012/02/22/use-gcd/</a></li>
 </ul>
+<hr>
 <ul>
 <li><h4 id="队列类型">队列类型</h4><ul>
 <li><h5 id="并发队列：">并发队列：</h5><ul>
@@ -302,7 +298,7 @@
 </li>
 </ul>
 <ul>
-<li><h4 id="同步方式：只能在_当前_线程中执行任务，不具务开启新线程的能力">同步方式：只能在 当前 线程中执行任务，不具务开启新线程的能力</h4><ul>
+<li><h4 id="同步方式：只能在当前线程中执行任务，不具务开启新线程的能力">同步方式：只能在当前线程中执行任务，不具务开启新线程的能力</h4><ul>
 <li><code>dispatch_sync(dispatch_queue_t queue, ^(void)block)</code></li>
 </ul>
 </li>
@@ -317,24 +313,24 @@
 <li><code>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</code></li>
 </ul>
 </li>
-<li><h4 id="串行队列_手动创建">串行队列 手动创建</h4><p><code>dispatch_queue_t queue = dispatch_queue_create(&quot;队列名称&quot;, NULL);</code></p>
+<li><h4 id="手动创建串行队列">手动创建串行队列</h4><p><code>dispatch_queue_t queue = dispatch_queue_create(&quot;队列名称&quot;, NULL);</code></p>
 </li>
 <li><h4 id="主队列（添加到主队列中的任务，会自动放在主线程中执行）">主队列（添加到主队列中的任务，会自动放在主线程中执行）</h4><p><code>dispatch_queue_t queue = dispatch_get_main_queue();</code></p>
 </li>
 </ul>
 <h5 id="异步并发队列（一般同时开启多个线程）（最常用）">异步并发队列（一般同时开启多个线程）（最常用）</h5><ul>
-<li><p>同时执行4个任务</p>
+<li>同时执行4个任务</li>
+</ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">dispatch_queue_t</span> <span class="built_in">queue</span> = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">dispatch_async(<span class="built_in">queue</span>, ^&#123;</span><br><span class="line">    <span class="comment">//任务1</span></span><br><span class="line">&#125;);</span><br><span class="line">dispatch_async(<span class="built_in">queue</span>, ^&#123;</span><br><span class="line">    <span class="comment">//任务2</span></span><br><span class="line">&#125;);</span><br><span class="line">dispatch_async(<span class="built_in">queue</span>, ^&#123;</span><br><span class="line">    <span class="comment">//任务3</span></span><br><span class="line">&#125;);</span><br><span class="line">dispatch_async(<span class="built_in">queue</span>, ^&#123;</span><br><span class="line">    <span class="comment">//任务4</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>异步 串行队列（一般只开1个线程）<br>按任务顺序执行  任务1—》任务2—》任务3—》任务4</p>
-</li>
+<ul>
+<li>异步 串行队列（一般只开1个线程）<br>按任务顺序执行  <code>任务1-&gt;任务2-&gt;任务3-&gt;任务4</code></li>
 </ul>
 <h5 id="串行队列">串行队列</h5><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">dispatch_queue_t queue = dispatch_queue_create<span class="list">(<span class="string">"com.popeye.jobs"</span>, NULL)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">    NSLog<span class="list">(@<span class="string">"执行任务1"</span>)</span><span class="comment">;</span></span><br><span class="line">    </span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">     NSLog<span class="list">(@<span class="string">"执行任务2"</span>)</span><span class="comment">;</span></span><br><span class="line">    </span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">     NSLog<span class="list">(@<span class="string">"执行任务3"</span>)</span><span class="comment">;</span></span><br><span class="line">    [NSThread sleepForTimeInterval:<span class="number">5</span>]<span class="comment">;</span></span><br><span class="line">    </span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br><span class="line">dispatch_async<span class="list">(<span class="keyword">queue</span>, ^&#123;</span><br><span class="line">     NSLog<span class="list">(@<span class="string">"执行任务4"</span>)</span><span class="comment">;</span></span><br><span class="line">    </span><br><span class="line">&#125;)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>常见用法 异步线程执行耗时操作 主线程刷新UI</li>
 </ul>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span>*)touches withEvent:(<span class="built_in">UIEvent</span>*)event</span><br><span class="line">&#123;</span><br><span class="line">   </span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(queue, ^&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"进入异步线程"</span>);</span><br><span class="line">        <span class="built_in">NSData</span>* data = [<span class="built_in">NSData</span> dataWithContentsOfURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://img4.duitang.com/uploads/item/201305/17/20130517130158_ha8AZ.jpeg"</span>]];</span><br><span class="line">        <span class="built_in">UIImage</span>* image = [<span class="built_in">UIImage</span> imageWithData:data];</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"图片加载完毕"</span>);</span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line"></span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"进入主线程"</span>);</span><br><span class="line">            <span class="keyword">self</span><span class="variable">.imageView</span><span class="variable">.image</span> = image;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"主线程刷新完毕"</span>);</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;);   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="延时执行">延时执行</h4><ul>
+<h4 id="延时执行操作">延时执行操作</h4><ul>
 <li><p>会卡住线程</p>
 <p>  <code>[NSThread sleepForTimeInterval:5];</code></p>
 </li>
