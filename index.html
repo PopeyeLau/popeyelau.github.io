@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Autolayout/" style="font-size: 10px;">Autolayout</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/NSDate/" style="font-size: 10px;">NSDate</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a>
+						<a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Autolayout/" style="font-size: 10px;">Autolayout</a> <a href="/tags/Blocks/" style="font-size: 10px;">Blocks</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/NSDate/" style="font-size: 10px;">NSDate</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective-C</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a>
 					</div>
 				</section>
 				
@@ -215,6 +215,71 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-objc-blocks" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/16/objc-blocks/" class="article-date">
+  	<time datetime="2015-07-16T06:40:35.000Z" itemprop="datePublished">2015-07-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/16/objc-blocks/">Objective-C Blocks</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>参考文档：<a href="http://fuckingblocksyntax.com" target="_blank" rel="external">http://fuckingblocksyntax.com</a></li>
+</ul>
+<ul>
+<li>语法</li>
+</ul>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">returnType (^blockName)(parameterTypes) = ^returnType(parameters) <span class="decorator">&#123;...&#125;</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>示例</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//typedef 声明</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> (^calculateBlock)(<span class="keyword">int</span> a,<span class="keyword">int</span> b);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Block当作属性 Block都是copy</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="keyword">int</span> (^calculate)(<span class="keyword">int</span> a,<span class="keyword">int</span> b);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Block当作方法参数</span></span><br><span class="line">- (<span class="keyword">void</span>)listChangedWithBlock:(<span class="keyword">void</span> (^)(<span class="built_in">NSDictionary</span>*))listChangeBlock;</span><br><span class="line">- </span><br><span class="line"><span class="comment">//Block调用</span></span><br><span class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">1.0</span> animations:^&#123;</span><br><span class="line">	<span class="comment">//执行动画</span></span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line"><span class="comment">//不需要参数 返回 NSString</span></span><br><span class="line"><span class="built_in">NSString</span>* (^getNickName)() = ^<span class="built_in">NSString</span>*()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">@"Popeye"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//接收两个参数a,b 返回 int</span></span><br><span class="line"><span class="keyword">int</span> (^sumBlock)() = ^<span class="keyword">int</span>(<span class="keyword">int</span> a, <span class="keyword">int</span> b) &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//修改block之外的变量 需要在变量前加上 __block 关键字</span></span><br><span class="line">__block <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">void</span>  (^foo)(<span class="keyword">void</span>) = ^&#123;</span><br><span class="line">	a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blocks/">Blocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-NSDate-useage" class="article article-type-post" itemscope itemprop="blogPost">
   
