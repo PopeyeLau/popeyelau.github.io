@@ -128,8 +128,8 @@ var Instagram = (function(){
 				console.log("Please open 'http://instagram.com/developer/clients/manage/' to get your client-id.");
 				return;
 			}
-			getList("https://api.instagram.com/v1/users/339198248/media/recent/?access_token=339198248.dd15f3e.221ee1e7711348719dc65a07e57a02ef&count=100");
-			//getList("https://api.instagram.com/v1/users/"+ userId +"/media/recent/?client_id="+insid+"&count=100");
+			//getList("https://api.instagram.com/v1/users/339198248/media/recent/?access_token=339198248.dd15f3e.221ee1e7711348719dc65a07e57a02ef&count=100");
+			getList("https://api.instagram.com/v1/users/"+ userId +"/media/recent/?client_id="+insid+"&count=100");
 			bind();
 		}
 	}
