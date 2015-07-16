@@ -119,7 +119,7 @@ var Instagram = (function(){
 
 	return {
 		init:function(){
-			getList("https://api.instagram.com/v1/users/438522285/media/recent/?access_token=438522285.2082eef.ead70f432f444a2e8b1b341617637bf6&count=100");
+			//getList("https://api.instagram.com/v1/users/438522285/media/recent/?access_token=438522285.2082eef.ead70f432f444a2e8b1b341617637bf6&count=100");
 			var insid = $(".instagram").attr("data-client-id");
             var userId = $(".instagram").attr("data-user-id");
 
@@ -128,7 +128,7 @@ var Instagram = (function(){
 				console.log("Please open 'http://instagram.com/developer/clients/manage/' to get your client-id.");
 				return;
 			}
-			//getList("https://api.instagram.com/v1/users/"+ userId +"/media/recent/?client_id="+insid+"&count=100");
+			getList("https://api.instagram.com/v1/users/"+ userId +"/media/recent/?client_id="+insid+"&count=100");
 			bind();
 		}
 	}
