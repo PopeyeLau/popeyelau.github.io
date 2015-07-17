@@ -47,7 +47,7 @@ dis">
 
 同步方式：只能在当前线程中执行任务，不具务开启新线程的能力
 dis">
-<meta property="og:updated_time" content="2015-07-17T05:16:27.000Z">
+<meta property="og:updated_time" content="2015-07-17T05:23:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCD常用方法">
 <meta name="twitter:description" content="详细介绍参见：http://blog.devtang.com/blog/2012/02/22/use-gcd/
@@ -350,12 +350,10 @@ dis">
 <li><h4 id="主队列（添加到主队列中的任务，会自动放在主线程中执行）">主队列（添加到主队列中的任务，会自动放在主线程中执行）</h4><p><code>dispatch_queue_t queue = dispatch_get_main_queue();</code></p>
 </li>
 </ul>
-<!--more—>
-
-#####异步并发队列（一般同时开启多个线程）（最常用）
-
-* 同时执行4个任务
-
+<a id="more"></a>
+<h5 id="异步并发队列（一般同时开启多个线程）（最常用）">异步并发队列（一般同时开启多个线程）（最常用）</h5><ul>
+<li>同时执行4个任务</li>
+</ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">dispatch_queue_t</span> <span class="built_in">queue</span> = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">dispatch_async(<span class="built_in">queue</span>, ^&#123;</span><br><span class="line">    <span class="comment">//任务1</span></span><br><span class="line">&#125;);</span><br><span class="line">dispatch_async(<span class="built_in">queue</span>, ^&#123;</span><br><span class="line">    <span class="comment">//任务2</span></span><br><span class="line">&#125;);</span><br><span class="line">dispatch_async(<span class="built_in">queue</span>, ^&#123;</span><br><span class="line">    <span class="comment">//任务3</span></span><br><span class="line">&#125;);</span><br><span class="line">dispatch_async(<span class="built_in">queue</span>, ^&#123;</span><br><span class="line">    <span class="comment">//任务4</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <ul>
 <li>异步 串行队列（一般只开1个线程）<br>按任务顺序执行  <code>任务1-&gt;任务2-&gt;任务3-&gt;任务4</code></li>
@@ -393,7 +391,7 @@ dis">
 <li>发送验证码30秒内禁用</li>
 </ul>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)startTime</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    __block <span class="keyword">int</span> timeout = <span class="number">30</span>; <span class="comment">//倒计时时间</span></span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, <span class="number">0</span>, <span class="number">0</span>, queue);</span><br><span class="line">    dispatch_source_set_timer(_timer, dispatch_walltime(<span class="literal">NULL</span>, <span class="number">0</span>), <span class="number">1.0</span> * <span class="built_in">NSEC_PER_SEC</span>, <span class="number">0</span>); <span class="comment">//每秒执行</span></span><br><span class="line">    dispatch_source_set_event_handler(_timer, ^&#123;</span><br><span class="line">        <span class="keyword">if</span> (timeout &lt;= <span class="number">0</span>) &#123; <span class="comment">//倒计时结束，关闭</span></span><br><span class="line">            dispatch_source_cancel(_timer);</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="comment">//设置界面的按钮显示 根据自己需求设置</span></span><br><span class="line">                [<span class="keyword">self</span><span class="variable">.btnSend</span> setTitle:<span class="string">@"发送"</span> forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">                <span class="keyword">self</span><span class="variable">.btnSend</span><span class="variable">.userInteractionEnabled</span> = <span class="literal">YES</span>;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> seconds = timeout % <span class="number">60</span>;</span><br><span class="line">            <span class="built_in">NSString</span>* strTime = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%.2d"</span>, seconds];</span><br><span class="line">            <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">                <span class="comment">//设置界面的按钮显示 根据自己需求设置</span></span><br><span class="line">                [<span class="keyword">self</span><span class="variable">.btnSend</span> setTitle:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@秒后重新发送"</span>, strTime] forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">                <span class="keyword">self</span><span class="variable">.btnSend</span><span class="variable">.userInteractionEnabled</span> = <span class="literal">NO</span>;</span><br><span class="line"></span><br><span class="line">            &#125;);</span><br><span class="line">            timeout--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    dispatch_resume(_timer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
--->
+
       
     </div>
     
