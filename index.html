@@ -149,6 +149,8 @@
 			        
 			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.devtang.com/">唐巧技术博客</a>
 			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://zhangbuhuai.com/">张不坏的博客</a>
+			        
 			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://my.oschina.net/joanfen">芳仔小脚印</a>
 			        
 			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.ibireme.com/github/list/ios/">GithubRepos</a>
@@ -384,7 +386,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>参考文档：<a href="https://github.com/erica/NSDate-Extensions" target="_blank" rel="external">https://github.com/erica/NSDate-Extensions</a></li>
+<li>参考文档：<a href="https://github.com/erica/NSDate-Extensions" title="NSDate-Extensions" target="_blank" rel="external">NSDate-Extensions</a></li>
 </ul>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当前时间</span></span><br><span class="line"><span class="built_in">NSDate</span> *now = [<span class="built_in">NSDate</span> date]; </span><br><span class="line"> </span><br><span class="line"><span class="comment">//格式化器</span></span><br><span class="line"><span class="built_in">NSDateFormatter</span> *formatter = [[<span class="built_in">NSDateFormatter</span> alloc] init]];</span><br><span class="line"><span class="comment">//设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制      </span></span><br><span class="line">[formatter setDateFormat:<span class="string">@"YYYY-MM-dd HH:mm:ss"</span>]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//设置时区</span></span><br><span class="line"><span class="built_in">NSTimeZone</span> *timeZone = [<span class="built_in">NSTimeZone</span> timeZoneWithName:<span class="string">@"Asia/Shanghai"</span>]; </span><br><span class="line">[formatter setTimeZone:timeZone]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//将NSDate按formatter格式转成NSString</span></span><br><span class="line"><span class="built_in">NSString</span> *nowStr = [formatter stringFromDate:now]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//当前时间加1天</span></span><br><span class="line">[now dateByAddingDays:<span class="number">1</span>] </span><br><span class="line"></span><br><span class="line"><span class="comment">//当前时间减1天</span></span><br><span class="line">[now dateBySubtractingDays:<span class="number">1</span>] </span><br><span class="line"></span><br><span class="line"><span class="comment">//时间转时间戳</span></span><br><span class="line"><span class="built_in">NSString</span> *timeSpan = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%d"</span>, (<span class="keyword">long</span>)[now timeIntervalSince1970]]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//时间戳转时间</span></span><br><span class="line"><span class="built_in">NSDate</span> *dateFromTimeSpan = [<span class="built_in">NSDate</span> dateWithTimeIntervalSince1970:<span class="number">1296035591</span>];</span><br></pre></td></tr></table></figure>
 
@@ -442,10 +444,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="参考文档">参考文档</h3><ul>
-<li><a href="https://github.com/AFNetworking/AFNetworking">https://github.com/AFNetworking/AFNetworking</a></li>
-<li><a href="http://cocoadocs.org/docsets/AFNetworking">http://cocoadocs.org/docsets/AFNetworking</a></li>
-<li><a href="http://zhangbuhuai.com/2014/08/03/AFNetworking-20-Tutorial/">http://zhangbuhuai.com/2014/08/03/AFNetworking-20-Tutorial/</a></li>
-<li><a href="http://www.cnblogs.com/YouXianMing/p/4291959.html">http://www.cnblogs.com/YouXianMing/p/4291959.html</a></li>
+<li><a href="https://github.com/AFNetworking/AFNetworking" title="AFNetworking/AFNetworking">AFNetworking/AFNetworking</a></li>
+<li><a href="http://cocoadocs.org/docsets/AFNetworking" title="AFNetworking">AFNetworking</a></li>
+<li><a href="http://zhangbuhuai.com/2014/08/03/AFNetworking-20-Tutorial/" title="AFNetworking 2.0教程">AFNetworking 2.0教程</a></li>
+<li><a href="http://www.cnblogs.com/YouXianMing/p/4291959.html" title="AFNetworking 2.5.0版本的使用">AFNetworking 2.5.0版本的使用</a></li>
 </ul>
       
     </div>
@@ -505,9 +507,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="参考文档">参考文档</h3><ul>
-<li><a href="https://github.com/SnapKit/Masonry">https://github.com/SnapKit/Masonry</a></li>
-<li><a href="http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/">http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/</a></li>
-<li><a href="http://tutuge.me/2015/05/23/autolayout-example-with-masonry/">http://tutuge.me/2015/05/23/autolayout-example-with-masonry/</a></li>
+<li><a href="https://github.com/SnapKit/Masonry" title="SnapKit/Masonry">SnapKit/Masonry</a> </li>
+<li><a href="http://adad184.com/2014/09/28/use-masonry-to-quick-solve-autolayout/" title="快速上手Autolayout">Masonry介绍与使用实践(快速上手Autolayout)</a></li>
+<li><a href="http://tutuge.me/2015/05/23/autolayout-example-with-masonry/" title="有趣的Autolayout示例-Masonry实现">有趣的Autolayout示例-Masonry实现</a></li>
 </ul>
       
     </div>
@@ -567,7 +569,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>详细介绍参见：<a href="http://blog.devtang.com/blog/2012/02/22/use-gcd/">http://blog.devtang.com/blog/2012/02/22/use-gcd/</a></li>
+<li>详细介绍参见：<a href="http://blog.devtang.com/blog/2012/02/22/use-gcd/" title="使用GCD">使用GCD</a></li>
 </ul>
 <hr>
 <ul>

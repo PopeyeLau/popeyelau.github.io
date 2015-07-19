@@ -5,22 +5,22 @@
   
   <title>NSDate常用方法 | 厌恶争执，不善言说</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="参考文档：https://github.com/erica/NSDate-Extensions
+  <meta name="description" content="参考文档：NSDate-Extensions
 
-1234567891011121314151617181920212223242526//当前时间NSDate *now = [NSDate date];  //格式化器NSDateFormatter *formatter = [[NSDateFormatter alloc] init]];//设置你">
+1234567891011121314151617181920212223242526//当前时间NSDate *now = [NSDate date];  //格式化器NSDateFormatter *formatter = [[NSDateFormatter alloc] init]];//设置你想要的格式,hh与HH的区别:分别表示12小时制,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NSDate常用方法">
 <meta property="og:url" content="https://popeyelau.github.io/2015/07/16/NSDate-useage/index.html">
 <meta property="og:site_name" content="厌恶争执，不善言说">
-<meta property="og:description" content="参考文档：https://github.com/erica/NSDate-Extensions
+<meta property="og:description" content="参考文档：NSDate-Extensions
 
-1234567891011121314151617181920212223242526//当前时间NSDate *now = [NSDate date];  //格式化器NSDateFormatter *formatter = [[NSDateFormatter alloc] init]];//设置你">
-<meta property="og:updated_time" content="2015-07-16T06:23:00.000Z">
+1234567891011121314151617181920212223242526//当前时间NSDate *now = [NSDate date];  //格式化器NSDateFormatter *formatter = [[NSDateFormatter alloc] init]];//设置你想要的格式,hh与HH的区别:分别表示12小时制,">
+<meta property="og:updated_time" content="2015-07-19T07:12:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NSDate常用方法">
-<meta name="twitter:description" content="参考文档：https://github.com/erica/NSDate-Extensions
+<meta name="twitter:description" content="参考文档：NSDate-Extensions
 
-1234567891011121314151617181920212223242526//当前时间NSDate *now = [NSDate date];  //格式化器NSDateFormatter *formatter = [[NSDateFormatter alloc] init]];//设置你">
+1234567891011121314151617181920212223242526//当前时间NSDate *now = [NSDate date];  //格式化器NSDateFormatter *formatter = [[NSDateFormatter alloc] init]];//设置你想要的格式,hh与HH的区别:分别表示12小时制,">
   
     <link rel="alternative" href="/atom.xml" title="厌恶争执，不善言说" type="application/atom+xml">
   
@@ -156,6 +156,8 @@
 			        
 			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.devtang.com/">唐巧技术博客</a>
 			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://zhangbuhuai.com/">张不坏的博客</a>
+			        
 			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://my.oschina.net/joanfen">芳仔小脚印</a>
 			        
 			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.ibireme.com/github/list/ios/">GithubRepos</a>
@@ -267,7 +269,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>参考文档：<a href="https://github.com/erica/NSDate-Extensions" target="_blank" rel="external">https://github.com/erica/NSDate-Extensions</a></li>
+<li>参考文档：<a href="https://github.com/erica/NSDate-Extensions" title="NSDate-Extensions" target="_blank" rel="external">NSDate-Extensions</a></li>
 </ul>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当前时间</span></span><br><span class="line"><span class="built_in">NSDate</span> *now = [<span class="built_in">NSDate</span> date]; </span><br><span class="line"> </span><br><span class="line"><span class="comment">//格式化器</span></span><br><span class="line"><span class="built_in">NSDateFormatter</span> *formatter = [[<span class="built_in">NSDateFormatter</span> alloc] init]];</span><br><span class="line"><span class="comment">//设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制      </span></span><br><span class="line">[formatter setDateFormat:<span class="string">@"YYYY-MM-dd HH:mm:ss"</span>]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//设置时区</span></span><br><span class="line"><span class="built_in">NSTimeZone</span> *timeZone = [<span class="built_in">NSTimeZone</span> timeZoneWithName:<span class="string">@"Asia/Shanghai"</span>]; </span><br><span class="line">[formatter setTimeZone:timeZone]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//将NSDate按formatter格式转成NSString</span></span><br><span class="line"><span class="built_in">NSString</span> *nowStr = [formatter stringFromDate:now]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//当前时间加1天</span></span><br><span class="line">[now dateByAddingDays:<span class="number">1</span>] </span><br><span class="line"></span><br><span class="line"><span class="comment">//当前时间减1天</span></span><br><span class="line">[now dateBySubtractingDays:<span class="number">1</span>] </span><br><span class="line"></span><br><span class="line"><span class="comment">//时间转时间戳</span></span><br><span class="line"><span class="built_in">NSString</span> *timeSpan = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%d"</span>, (<span class="keyword">long</span>)[now timeIntervalSince1970]]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//时间戳转时间</span></span><br><span class="line"><span class="built_in">NSDate</span> *dateFromTimeSpan = [<span class="built_in">NSDate</span> dateWithTimeIntervalSince1970:<span class="number">1296035591</span>];</span><br></pre></td></tr></table></figure>
 
