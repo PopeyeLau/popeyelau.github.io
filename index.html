@@ -256,9 +256,7 @@
 <blockquote>
 <p>Cocoa中谓词(Predicate)提供了一个通用的查询方式处理数据，可以获取和指定数据的过滤形式，Cocoa实际开发中可以是使用<code>NSPredicate</code>及其父类<code>NSComparisonPredicate</code>和<code>NSCompoundPredicate</code>.其风格类似于SQL查询语言和正则表达式的混合体，提供了具有表现力的，自然语言界面来定义一个集合被搜寻的逻辑条件。一般来说稍微操作过数据库基本上很容易理解其中的方法，至于使用的方法也很简单。</p>
 </blockquote>
-<h4 id="集合中的NSPredicate">集合中的NSPredicate</h4><ul>
-<li>Foundation提供使用谓词（predicate）来过滤NSArray／NSMutableArray&amp;NSSet／NSMutableSet的方法。</li>
-</ul>
+<h4 id="集合中的NSPredicate">集合中的NSPredicate</h4><p>Foundation提供使用谓词（predicate）来过滤NSArray／NSMutableArray&amp;NSSet／NSMutableSet的方法。</p>
 <p>首先来一段比较简单的代码：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSPredicate</span> *predicate = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF IN %@"</span>, @[<span class="string">@"keso"</span>, <span class="string">@"FlyElephant"</span>, <span class="string">@"博客园"</span>]];</span><br><span class="line"><span class="keyword">if</span> ([predicate evaluateWithObject:<span class="string">@"keso"</span>]) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"keso"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>第一行代码初始化一个查询条件，第二句就是判断数据在不在结果集中，跟SQL基本上一样，通过IN就能大概了解其功能，SELF表示本身，非常常用。</p>
