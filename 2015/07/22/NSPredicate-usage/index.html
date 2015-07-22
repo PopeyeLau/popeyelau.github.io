@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>NSDate常用方法 | 厌恶争执，不善言说</title>
+  <title>iOS开发-NSPredicate | 厌恶争执，不善言说</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="参考文档：NSDate-Extensions
+  <meta name="description" content="参考文档：iOS开发-NSPredicate
 
-1234567891011121314151617181920212223242526//当前时间NSDate *now = [NSDate date];  //格式化器NSDateFormatter *formatter = [[NSDateFormatter alloc] init]];//设置你想要的格式,hh与HH的区别:分别表示12小时制,">
+Cocoa中谓词(Predicate)提供了一个通用的查询方式处理数据，可以获取和指定数据的过滤形式，Cocoa实际开发中可以是使用NSPredicate及其父类NSComparisonPredicate和NSCompoundPredicate.其风格类似于SQL查询语言和正则表达式的混合体，提供了具有表现力的，自然语言界面来定义一个集合被搜寻的逻辑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NSDate常用方法">
-<meta property="og:url" content="https://popeyelau.github.io/2015/07/16/NSDate-useage/index.html">
+<meta property="og:title" content="iOS开发-NSPredicate">
+<meta property="og:url" content="https://popeyelau.github.io/2015/07/22/NSPredicate-usage/index.html">
 <meta property="og:site_name" content="厌恶争执，不善言说">
-<meta property="og:description" content="参考文档：NSDate-Extensions
+<meta property="og:description" content="参考文档：iOS开发-NSPredicate
 
-1234567891011121314151617181920212223242526//当前时间NSDate *now = [NSDate date];  //格式化器NSDateFormatter *formatter = [[NSDateFormatter alloc] init]];//设置你想要的格式,hh与HH的区别:分别表示12小时制,">
-<meta property="og:updated_time" content="2015-07-19T07:12:02.000Z">
+Cocoa中谓词(Predicate)提供了一个通用的查询方式处理数据，可以获取和指定数据的过滤形式，Cocoa实际开发中可以是使用NSPredicate及其父类NSComparisonPredicate和NSCompoundPredicate.其风格类似于SQL查询语言和正则表达式的混合体，提供了具有表现力的，自然语言界面来定义一个集合被搜寻的逻辑">
+<meta property="og:updated_time" content="2015-07-22T08:34:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NSDate常用方法">
-<meta name="twitter:description" content="参考文档：NSDate-Extensions
+<meta name="twitter:title" content="iOS开发-NSPredicate">
+<meta name="twitter:description" content="参考文档：iOS开发-NSPredicate
 
-1234567891011121314151617181920212223242526//当前时间NSDate *now = [NSDate date];  //格式化器NSDateFormatter *formatter = [[NSDateFormatter alloc] init]];//设置你想要的格式,hh与HH的区别:分别表示12小时制,">
+Cocoa中谓词(Predicate)提供了一个通用的查询方式处理数据，可以获取和指定数据的过滤形式，Cocoa实际开发中可以是使用NSPredicate及其父类NSComparisonPredicate和NSCompoundPredicate.其风格类似于SQL查询语言和正则表达式的混合体，提供了具有表现力的，自然语言界面来定义一个集合被搜寻的逻辑">
   
     <link rel="alternative" href="/atom.xml" title="厌恶争执，不善言说" type="application/atom+xml">
   
@@ -231,11 +231,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-NSDate-useage" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-NSPredicate-usage" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/16/NSDate-useage/" class="article-date">
-  	<time datetime="2015-07-16T06:12:03.000Z" itemprop="datePublished">2015-07-16</time>
+      <a href="/2015/07/22/NSPredicate-usage/" class="article-date">
+  	<time datetime="2015-07-22T08:11:37.000Z" itemprop="datePublished">2015-07-22</time>
 </a>
     </div>
   
@@ -248,7 +248,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      NSDate常用方法
+      iOS开发-NSPredicate
     </h1>
   
 
@@ -257,7 +257,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NSDate/">NSDate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NSPredicate/">NSPredicate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 	</div>
 
         
@@ -268,10 +268,51 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>参考文档：<a href="https://github.com/erica/NSDate-Extensions" title="NSDate-Extensions" target="_blank" rel="external">NSDate-Extensions</a></li>
+        <p>参考文档：<a href="http://www.cnblogs.com/xiaofeixiang/p/4264869.html" title="iOS开发-NSPredicate" target="_blank" rel="external">iOS开发-NSPredicate</a></p>
+<blockquote>
+<p>Cocoa中谓词(Predicate)提供了一个通用的查询方式处理数据，可以获取和指定数据的过滤形式，Cocoa实际开发中可以是使用<code>NSPredicate</code>及其父类<code>NSComparisonPredicate</code>和<code>NSCompoundPredicate</code>.其风格类似于SQL查询语言和正则表达式的混合体，提供了具有表现力的，自然语言界面来定义一个集合被搜寻的逻辑条件。一般来说稍微操作过数据库基本上很容易理解其中的方法，至于使用的方法也很简单。</p>
+</blockquote>
+<h4 id="集合中的NSPredicate">集合中的NSPredicate</h4><ul>
+<li>Foundation提供使用谓词（predicate）来过滤NSArray／NSMutableArray&amp;NSSet／NSMutableSet的方法。</li>
 </ul>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当前时间</span></span><br><span class="line"><span class="built_in">NSDate</span> *now = [<span class="built_in">NSDate</span> date]; </span><br><span class="line"> </span><br><span class="line"><span class="comment">//格式化器</span></span><br><span class="line"><span class="built_in">NSDateFormatter</span> *formatter = [[<span class="built_in">NSDateFormatter</span> alloc] init]];</span><br><span class="line"><span class="comment">//设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制      </span></span><br><span class="line">[formatter setDateFormat:<span class="string">@"YYYY-MM-dd HH:mm:ss"</span>]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//设置时区</span></span><br><span class="line"><span class="built_in">NSTimeZone</span> *timeZone = [<span class="built_in">NSTimeZone</span> timeZoneWithName:<span class="string">@"Asia/Shanghai"</span>]; </span><br><span class="line">[formatter setTimeZone:timeZone]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//将NSDate按formatter格式转成NSString</span></span><br><span class="line"><span class="built_in">NSString</span> *nowStr = [formatter stringFromDate:now]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//当前时间加1天</span></span><br><span class="line">[now dateByAddingDays:<span class="number">1</span>] </span><br><span class="line"></span><br><span class="line"><span class="comment">//当前时间减1天</span></span><br><span class="line">[now dateBySubtractingDays:<span class="number">1</span>] </span><br><span class="line"></span><br><span class="line"><span class="comment">//时间转时间戳</span></span><br><span class="line"><span class="built_in">NSString</span> *timeSpan = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%d"</span>, (<span class="keyword">long</span>)[now timeIntervalSince1970]]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//时间戳转时间</span></span><br><span class="line"><span class="built_in">NSDate</span> *dateFromTimeSpan = [<span class="built_in">NSDate</span> dateWithTimeIntervalSince1970:<span class="number">1296035591</span>];</span><br></pre></td></tr></table></figure>
+<p>首先来一段比较简单的代码：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSPredicate</span> *predicate = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF IN %@"</span>, @[<span class="string">@"keso"</span>, <span class="string">@"FlyElephant"</span>, <span class="string">@"博客园"</span>]];</span><br><span class="line"><span class="keyword">if</span> ([predicate evaluateWithObject:<span class="string">@"keso"</span>]) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"keso"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>第一行代码初始化一个查询条件，第二句就是判断数据在不在结果集中，跟SQL基本上一样，通过IN就能大概了解其功能，SELF表示本身，非常常用。</p>
+<p>类似于SQL中like语句的代码:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSArray *array = [[NSArray alloc]initWithObjects:@"北京",@"上海",@"广州",@"深圳",nil];</span><br><span class="line">NSPredicate *preBegin= [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@",@"北"];</span><br><span class="line">NSPredicate *preContain= [NSPredicate predicateWithFormat:@"SELF contains[c] %@",@"海"];</span><br><span class="line">  </span><br><span class="line">NSLog(@"%@",[<span class="link_label">array filteredArrayUsingPredicate:preBegin</span>][<span class="link_reference">0</span>]);</span><br><span class="line">NSLog(@"%@",[<span class="link_label">array filteredArrayUsingPredicate:preContain</span>][<span class="link_reference">0</span>]);</span><br></pre></td></tr></table></figure>
+<p>第一行就是先初始化数组，然后创建条件，通过<code>filteredArrayUsingPredicate</code>过滤数组；</p>
+<p><code>NSDictionary</code>可以用谓词来过滤它的键和值（两者都为<code>NSArray</code>对象）;</p>
+<p><code>NSOrderedSet</code>可以由过滤的<code>NSArray</code>或<code>NSSet</code>生成一个新的有序的集，或者<code>NSMutableSet</code>可以简单的<code>removeObjectsInArray</code>来传递通过否定predicate过滤的对象。</p>
+<h4 id="Core_Data中的NSPredicate">Core Data中的NSPredicate</h4><p>谓词的在Core Data同样适用，在管理对象环境中，谓词由持久化存储助理（persistent store coordinator）评估，而集合则是内存中过滤。这时候我们有必要里了解一下基本比较运算符:</p>
+<ul>
+<li><code>BETWEEN</code>：左边的表达式等于右边的表达式的值或者介于它们之间。右边是一个有两个指定上限和下限的数值的数列（指定顺序的数列）。比如，1 BETWEEN { 0 , 33 }</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSPredicate</span> *betweenPredicate =</span><br><span class="line"><span class="built_in">NSPredicate</span> predicateWithFormat: <span class="string">@"attributeName BETWEEN %@"</span>, @[@<span class="number">0</span>, @<span class="number">33</span>]];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSDictionary</span> *dictionary = @&#123; <span class="string">@"attributeName"</span> : @<span class="number">1</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">BOOL</span> between = [betweenPredicate evaluateWithObject:dictionary];</span><br><span class="line"><span class="keyword">if</span> (between) &#123;</span><br><span class="line">   <span class="built_in">NSLog</span>(<span class="string">@"比较运算符between"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="字符串比较">字符串比较</h4><p>字符串比较非常常用，以下的都应该比较熟悉:</p>
+<p><code>BEGINSWITH[cd] $FIRST_NAME</code>。</p>
+<p><code>BEGINSWITH</code>：左边的表达式以右边的表达式作为开始。</p>
+<p><code>CONTAINS</code>：左边的表达式包含右边的表达式。</p>
+<p><code>ENDSWITH</code>：左边的表达式以右边的表达式作为结束。</p>
+<p><code>LIKE</code>：左边的表达式等于右边的表达式：?和<em>可作为通配符，其中?匹配1个字符，</em>匹配0个或者多个字符。</p>
+<p><code>MATCHES</code>：左边的表达式根据ICU v3的regex风格比较，等于右边的表达式。</p>
+<p>可参考以下代码:</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *regex = <span class="string">@"[A-Za-z]+"</span>;</span><br><span class="line"><span class="built_in">NSPredicate</span> *matchpredicate = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, regex];</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> ([matchpredicate evaluateWithObject:<span class="string">@"keso"</span>]) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"匹配成功"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>关系操作<br><code>ANY</code>，<code>SOME</code>：指定下列表达式中的任意元素。比如，ANY children.age &lt; 18。</li>
+</ul>
+<p><code>ALL</code>：指定下列表达式中的所有元素。比如，ALL children.age &lt; 18。</p>
+<p><code>NONE</code>：指定下列表达式中没有的元素。比如，NONE children.age &lt; 18。它在逻辑上等于NOT (ANY …)。</p>
+<p><code>IN</code>：等于SQL的IN操作，左边的表达必须出现在右边指定的集合中。比如，name IN { ‘Ben’, ‘Melissa’, ‘Nick’ }。</p>
+<ul>
+<li>数组操作<br>array[index]：指定数组中特定索引处的元素。</li>
+</ul>
+<p>array[FIRST]：指定数组中的第一个元素。</p>
+<p>array[LAST]：指定数组中的最后一个元素。</p>
+<p>array[SIZE]：指定数组的大小。</p>
+<ul>
+<li>布尔值谓词<br><code>TRUEPREDICATE</code>：结果始终为真的谓词。</li>
+</ul>
+<p><code>FALSEPREDICATE</code>：结果始终为假的谓词。</p>
 
       
     </div>
@@ -281,18 +322,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/07/16/objc-blocks/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Objective-C Blocks
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/16/AFNetworking-step-by-step/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">AFNetworking处理简单请求</div>
+    <a href="/2015/07/19/Autolayout-demo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS Autolayout示例练习</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -321,7 +353,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="NSDate-useage" data-title="NSDate常用方法" data-url="https://popeyelau.github.io/2015/07/16/NSDate-useage/"></div>
+	<div class="ds-thread" data-thread-key="NSPredicate-usage" data-title="iOS开发-NSPredicate" data-url="https://popeyelau.github.io/2015/07/22/NSPredicate-usage/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

@@ -120,7 +120,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Autolayout/" style="font-size: 15px;">Autolayout</a> <a href="/tags/Blocks/" style="font-size: 10px;">Blocks</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/Masonry/" style="font-size: 15px;">Masonry</a> <a href="/tags/NSDate/" style="font-size: 10px;">NSDate</a> <a href="/tags/Objective-C/" style="font-size: 15px;">Objective-C</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a>
+						<a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Autolayout/" style="font-size: 15px;">Autolayout</a> <a href="/tags/Blocks/" style="font-size: 10px;">Blocks</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/Masonry/" style="font-size: 15px;">Masonry</a> <a href="/tags/NSDate/" style="font-size: 10px;">NSDate</a> <a href="/tags/NSPredicate/" style="font-size: 10px;">NSPredicate</a> <a href="/tags/Objective-C/" style="font-size: 15px;">Objective-C</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a>
 					</div>
 				</section>
 				
@@ -225,6 +225,105 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-NSPredicate-usage" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/22/NSPredicate-usage/" class="article-date">
+  	<time datetime="2015-07-22T08:11:37.000Z" itemprop="datePublished">2015-07-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/22/NSPredicate-usage/">iOS开发-NSPredicate</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>参考文档：<a href="http://www.cnblogs.com/xiaofeixiang/p/4264869.html" title="iOS开发-NSPredicate" target="_blank" rel="external">iOS开发-NSPredicate</a></p>
+<blockquote>
+<p>Cocoa中谓词(Predicate)提供了一个通用的查询方式处理数据，可以获取和指定数据的过滤形式，Cocoa实际开发中可以是使用<code>NSPredicate</code>及其父类<code>NSComparisonPredicate</code>和<code>NSCompoundPredicate</code>.其风格类似于SQL查询语言和正则表达式的混合体，提供了具有表现力的，自然语言界面来定义一个集合被搜寻的逻辑条件。一般来说稍微操作过数据库基本上很容易理解其中的方法，至于使用的方法也很简单。</p>
+</blockquote>
+<h4 id="集合中的NSPredicate">集合中的NSPredicate</h4><ul>
+<li>Foundation提供使用谓词（predicate）来过滤NSArray／NSMutableArray&amp;NSSet／NSMutableSet的方法。</li>
+</ul>
+<p>首先来一段比较简单的代码：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSPredicate</span> *predicate = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF IN %@"</span>, @[<span class="string">@"keso"</span>, <span class="string">@"FlyElephant"</span>, <span class="string">@"博客园"</span>]];</span><br><span class="line"><span class="keyword">if</span> ([predicate evaluateWithObject:<span class="string">@"keso"</span>]) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"keso"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>第一行代码初始化一个查询条件，第二句就是判断数据在不在结果集中，跟SQL基本上一样，通过IN就能大概了解其功能，SELF表示本身，非常常用。</p>
+<p>类似于SQL中like语句的代码:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSArray *array = [[NSArray alloc]initWithObjects:@"北京",@"上海",@"广州",@"深圳",nil];</span><br><span class="line">NSPredicate *preBegin= [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@",@"北"];</span><br><span class="line">NSPredicate *preContain= [NSPredicate predicateWithFormat:@"SELF contains[c] %@",@"海"];</span><br><span class="line">  </span><br><span class="line">NSLog(@"%@",[<span class="link_label">array filteredArrayUsingPredicate:preBegin</span>][<span class="link_reference">0</span>]);</span><br><span class="line">NSLog(@"%@",[<span class="link_label">array filteredArrayUsingPredicate:preContain</span>][<span class="link_reference">0</span>]);</span><br></pre></td></tr></table></figure>
+<p>第一行就是先初始化数组，然后创建条件，通过<code>filteredArrayUsingPredicate</code>过滤数组；</p>
+<p><code>NSDictionary</code>可以用谓词来过滤它的键和值（两者都为<code>NSArray</code>对象）;</p>
+<p><code>NSOrderedSet</code>可以由过滤的<code>NSArray</code>或<code>NSSet</code>生成一个新的有序的集，或者<code>NSMutableSet</code>可以简单的<code>removeObjectsInArray</code>来传递通过否定predicate过滤的对象。</p>
+<h4 id="Core_Data中的NSPredicate">Core Data中的NSPredicate</h4><p>谓词的在Core Data同样适用，在管理对象环境中，谓词由持久化存储助理（persistent store coordinator）评估，而集合则是内存中过滤。这时候我们有必要里了解一下基本比较运算符:</p>
+<ul>
+<li><code>BETWEEN</code>：左边的表达式等于右边的表达式的值或者介于它们之间。右边是一个有两个指定上限和下限的数值的数列（指定顺序的数列）。比如，1 BETWEEN { 0 , 33 }</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSPredicate</span> *betweenPredicate =</span><br><span class="line"><span class="built_in">NSPredicate</span> predicateWithFormat: <span class="string">@"attributeName BETWEEN %@"</span>, @[@<span class="number">0</span>, @<span class="number">33</span>]];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSDictionary</span> *dictionary = @&#123; <span class="string">@"attributeName"</span> : @<span class="number">1</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">BOOL</span> between = [betweenPredicate evaluateWithObject:dictionary];</span><br><span class="line"><span class="keyword">if</span> (between) &#123;</span><br><span class="line">   <span class="built_in">NSLog</span>(<span class="string">@"比较运算符between"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="字符串比较">字符串比较</h4><p>字符串比较非常常用，以下的都应该比较熟悉:</p>
+<p><code>BEGINSWITH[cd] $FIRST_NAME</code>。</p>
+<p><code>BEGINSWITH</code>：左边的表达式以右边的表达式作为开始。</p>
+<p><code>CONTAINS</code>：左边的表达式包含右边的表达式。</p>
+<p><code>ENDSWITH</code>：左边的表达式以右边的表达式作为结束。</p>
+<p><code>LIKE</code>：左边的表达式等于右边的表达式：?和<em>可作为通配符，其中?匹配1个字符，</em>匹配0个或者多个字符。</p>
+<p><code>MATCHES</code>：左边的表达式根据ICU v3的regex风格比较，等于右边的表达式。</p>
+<p>可参考以下代码:</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *regex = <span class="string">@"[A-Za-z]+"</span>;</span><br><span class="line"><span class="built_in">NSPredicate</span> *matchpredicate = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF MATCHES %@"</span>, regex];</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> ([matchpredicate evaluateWithObject:<span class="string">@"keso"</span>]) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"匹配成功"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>关系操作<br><code>ANY</code>，<code>SOME</code>：指定下列表达式中的任意元素。比如，ANY children.age &lt; 18。</li>
+</ul>
+<p><code>ALL</code>：指定下列表达式中的所有元素。比如，ALL children.age &lt; 18。</p>
+<p><code>NONE</code>：指定下列表达式中没有的元素。比如，NONE children.age &lt; 18。它在逻辑上等于NOT (ANY …)。</p>
+<p><code>IN</code>：等于SQL的IN操作，左边的表达必须出现在右边指定的集合中。比如，name IN { ‘Ben’, ‘Melissa’, ‘Nick’ }。</p>
+<ul>
+<li>数组操作<br>array[index]：指定数组中特定索引处的元素。</li>
+</ul>
+<p>array[FIRST]：指定数组中的第一个元素。</p>
+<p>array[LAST]：指定数组中的最后一个元素。</p>
+<p>array[SIZE]：指定数组的大小。</p>
+<ul>
+<li>布尔值谓词<br><code>TRUEPREDICATE</code>：结果始终为真的谓词。</li>
+</ul>
+<p><code>FALSEPREDICATE</code>：结果始终为假的谓词。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NSPredicate/">NSPredicate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-Autolayout-demo" class="article article-type-post" itemscope itemprop="blogPost">
   
