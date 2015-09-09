@@ -3,45 +3,79 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Objective-C Blocks | 厌恶争执，不善言说</title>
+  <title>CocoaPods管理iOS项目的依赖 | 厌恶争执，不善言说</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="参考文档：http://fuckingblocksyntax.com
+  <meta name="description" content="折腾了很久 记录一下Pod配置文件
+项目结构
+Union.xcworkspace
+
+App.xcodeproj
+NetworkLib.xcodeproj
+BusinessLib.xcodeproj
 
 
-语法
+依赖关系
 
-1returnType (^blockName)(parameterTypes) = ^returnType(parameters) &amp;#123;...&amp;#125;;
+App —&amp;gt; NetworkLib
+App —&amp;gt; BusinessLib
+BusinessLib —&amp;gt; NetworkLib
 
-示例
 
-123456789101112131415161718192021222324252627282930//typedef 声明typedef">
+
+
+Podfile
+
+12345678">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Objective-C Blocks">
-<meta property="og:url" content="https://popeyelau.github.io/2015/07/16/objc-blocks/index.html">
+<meta property="og:title" content="CocoaPods管理iOS项目的依赖">
+<meta property="og:url" content="https://popeyelau.github.io/2015/09/09/cocoapods-usage/index.html">
 <meta property="og:site_name" content="厌恶争执，不善言说">
-<meta property="og:description" content="参考文档：http://fuckingblocksyntax.com
+<meta property="og:description" content="折腾了很久 记录一下Pod配置文件
+项目结构
+Union.xcworkspace
+
+App.xcodeproj
+NetworkLib.xcodeproj
+BusinessLib.xcodeproj
 
 
-语法
+依赖关系
 
-1returnType (^blockName)(parameterTypes) = ^returnType(parameters) &amp;#123;...&amp;#125;;
+App —&amp;gt; NetworkLib
+App —&amp;gt; BusinessLib
+BusinessLib —&amp;gt; NetworkLib
 
-示例
 
-123456789101112131415161718192021222324252627282930//typedef 声明typedef">
-<meta property="og:updated_time" content="2015-07-17T05:14:22.000Z">
+
+
+Podfile
+
+12345678">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/7a4027b5gw1evwl0vregsj21kw16lgx0.jpg">
+<meta property="og:updated_time" content="2015-09-09T14:55:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Objective-C Blocks">
-<meta name="twitter:description" content="参考文档：http://fuckingblocksyntax.com
+<meta name="twitter:title" content="CocoaPods管理iOS项目的依赖">
+<meta name="twitter:description" content="折腾了很久 记录一下Pod配置文件
+项目结构
+Union.xcworkspace
+
+App.xcodeproj
+NetworkLib.xcodeproj
+BusinessLib.xcodeproj
 
 
-语法
+依赖关系
 
-1returnType (^blockName)(parameterTypes) = ^returnType(parameters) &amp;#123;...&amp;#125;;
+App —&amp;gt; NetworkLib
+App —&amp;gt; BusinessLib
+BusinessLib —&amp;gt; NetworkLib
 
-示例
 
-123456789101112131415161718192021222324252627282930//typedef 声明typedef">
+
+
+Podfile
+
+12345678">
   
     <link rel="alternative" href="/atom.xml" title="厌恶争执，不善言说" type="application/atom+xml">
   
@@ -254,11 +288,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-objc-blocks" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-cocoapods-usage" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/16/objc-blocks/" class="article-date">
-  	<time datetime="2015-07-16T06:40:35.000Z" itemprop="datePublished">2015-07-16</time>
+      <a href="/2015/09/09/cocoapods-usage/" class="article-date">
+  	<time datetime="2015-09-09T14:32:24.000Z" itemprop="datePublished">2015-09-09</time>
 </a>
     </div>
   
@@ -271,7 +305,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Objective-C Blocks
+      CocoaPods管理iOS项目的依赖
     </h1>
   
 
@@ -280,7 +314,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blocks/">Blocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CocoaPods/">CocoaPods</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-c/">Objective-c</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 	</div>
 
         
@@ -291,17 +325,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>参考文档：<a href="http://fuckingblocksyntax.com" target="_blank" rel="external">http://fuckingblocksyntax.com</a></li>
-</ul>
+        <h5 id="折腾了很久_记录一下Pod配置文件">折腾了很久 记录一下Pod配置文件</h5><ul>
+<li>项目结构</li>
+<li><p>Union.xcworkspace</p>
 <ul>
-<li>语法</li>
+<li>App.xcodeproj</li>
+<li>NetworkLib.xcodeproj</li>
+<li>BusinessLib.xcodeproj</li>
 </ul>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">returnType (^blockName)(parameterTypes) = ^returnType(parameters) <span class="decorator">&#123;...&#125;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>依赖关系</p>
 <ul>
-<li>示例</li>
+<li>App —&gt; NetworkLib</li>
+<li>App —&gt; BusinessLib</li>
+<li>BusinessLib —&gt; NetworkLib</li>
 </ul>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//typedef 声明</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> (^calculateBlock)(<span class="keyword">int</span> a,<span class="keyword">int</span> b);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Block当作属性 Block都是copy</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="keyword">int</span> (^calculateBlock)(<span class="keyword">int</span> a,<span class="keyword">int</span> b);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Block当作方法参数</span></span><br><span class="line">- (<span class="keyword">void</span>)listChangedWithBlock:(<span class="keyword">void</span> (^)(<span class="built_in">NSDictionary</span>*))listChangeBlock;</span><br><span class="line">- </span><br><span class="line"><span class="comment">//Block调用</span></span><br><span class="line">[<span class="built_in">UIView</span> animateWithDuration:<span class="number">1.0</span> animations:^&#123;</span><br><span class="line">	<span class="comment">//执行动画</span></span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line"><span class="comment">//不需要参数 返回 NSString</span></span><br><span class="line"><span class="built_in">NSString</span>* (^getNickName)() = ^<span class="built_in">NSString</span>*()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">@"Popeye"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//接收两个参数a,b 返回 int</span></span><br><span class="line"><span class="keyword">int</span> (^calculateBlock)() = ^<span class="keyword">int</span>(<span class="keyword">int</span> a, <span class="keyword">int</span> b) &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//修改block之外的变量 需要在变量前加上 __block 关键字</span></span><br><span class="line">__block <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">void</span>  (^foo)(<span class="keyword">void</span>) = ^&#123;</span><br><span class="line">	a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id=""><img src="http://ww2.sinaimg.cn/large/7a4027b5gw1evwl0vregsj21kw16lgx0.jpg" alt="项目结构图" title="项目结构图"></h2><ul>
+<li>Podfile</li>
+</ul>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">workspace <span class="string">'Union'</span></span><br><span class="line"></span><br><span class="line">xcodeproj <span class="string">'App/App.xcodeproj'</span><span class="comment"> //程序</span></span><br><span class="line">xcodeproj <span class="string">'BusinessLib/BusinessLib.xcodeproj'</span><span class="comment"> //业务库</span></span><br><span class="line">xcodeproj <span class="string">'NetworkLib/NetworkLib.xcodeproj'</span><span class="comment"> //网络处理</span></span><br><span class="line"></span><br><span class="line">target :App <span class="built_in">do</span></span><br><span class="line"><span class="built_in">platform</span> :ios, <span class="string">'8.0'</span></span><br><span class="line">use_frameworks!</span><br><span class="line">pod <span class="string">'SDWebImage'</span>, <span class="string">'~&gt; 3.4'</span></span><br><span class="line">pod <span class="string">'YTKNetwork'</span>, <span class="string">'~&gt; 0.5.0'</span></span><br><span class="line">pod <span class="string">'BlocksKit'</span>, <span class="string">'~&gt; 2.2.5'</span></span><br><span class="line">xcodeproj <span class="string">'App/App.xcodeproj'</span></span><br><span class="line"><span class="function"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="title">target</span> :<span class="title">NetworkLib</span> <span class="title">do</span></span></span><br><span class="line"><span class="built_in">platform</span> :ios, <span class="string">'8.0'</span></span><br><span class="line">use_frameworks!</span><br><span class="line">pod <span class="string">'YTKNetwork'</span>, <span class="string">'~&gt; 0.5.0'</span></span><br><span class="line">xcodeproj <span class="string">'NetworkLib/NetworkLib.xcodeproj'</span></span><br><span class="line"><span class="function"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="title">target</span> :<span class="title">BusinessLib</span> <span class="title">do</span></span></span><br><span class="line"><span class="built_in">platform</span> :ios, <span class="string">'8.0'</span></span><br><span class="line">use_frameworks!</span><br><span class="line">pod <span class="string">'MJExtension'</span>, <span class="string">'~&gt; 2.5.9'</span></span><br><span class="line">xcodeproj <span class="string">'BusinessLib/BusinessLib.xcodeproj'</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -311,18 +355,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/07/19/Autolayout-demo/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          iOS Autolayout示例练习
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/16/NSDate-useage/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">NSDate常用方法</div>
+    <a href="/2015/08/04/iOS-Guides/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS开发60分钟入门</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -351,7 +386,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="objc-blocks" data-title="Objective-C Blocks" data-url="https://popeyelau.github.io/2015/07/16/objc-blocks/"></div>
+	<div class="ds-thread" data-thread-key="cocoapods-usage" data-title="CocoaPods管理iOS项目的依赖" data-url="https://popeyelau.github.io/2015/09/09/cocoapods-usage/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
