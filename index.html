@@ -120,7 +120,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Autolayout/" style="font-size: 16.67px;">Autolayout</a> <a href="/tags/Blocks/" style="font-size: 10px;">Blocks</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/Masonry/" style="font-size: 16.67px;">Masonry</a> <a href="/tags/NSDate/" style="font-size: 10px;">NSDate</a> <a href="/tags/NSPredicate/" style="font-size: 10px;">NSPredicate</a> <a href="/tags/Objective-C/" style="font-size: 13.33px;">Objective-C</a> <a href="/tags/Objective-c/" style="font-size: 16.67px;">Objective-c</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a>
+						<a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Autolayout/" style="font-size: 16.67px;">Autolayout</a> <a href="/tags/Blocks/" style="font-size: 10px;">Blocks</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/Masonry/" style="font-size: 16.67px;">Masonry</a> <a href="/tags/NSDate/" style="font-size: 10px;">NSDate</a> <a href="/tags/Objective-C/" style="font-size: 13.33px;">Objective-C</a> <a href="/tags/Objective-c/" style="font-size: 16.67px;">Objective-c</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a>
 					</div>
 				</section>
 				
@@ -431,71 +431,6 @@
       
         <p class="article-more-link">
           <a  href="/2015/08/04/iOS-Guides/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-NSPredicate-usage" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/22/NSPredicate-usage/" class="article-date">
-  	<time datetime="2015-07-22T08:11:37.000Z" itemprop="datePublished">2015-07-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/22/NSPredicate-usage/">iOS开发-NSPredicate</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>参考文档：<a href="http://www.cnblogs.com/xiaofeixiang/p/4264869.html" title="iOS开发-NSPredicate">iOS开发-NSPredicate</a></p>
-<blockquote>
-<p>Cocoa中谓词(Predicate)提供了一个通用的查询方式处理数据，可以获取和指定数据的过滤形式，Cocoa实际开发中可以是使用<code>NSPredicate</code>及其父类<code>NSComparisonPredicate</code>和<code>NSCompoundPredicate</code>.其风格类似于SQL查询语言和正则表达式的混合体，提供了具有表现力的，自然语言界面来定义一个集合被搜寻的逻辑条件。一般来说稍微操作过数据库基本上很容易理解其中的方法，至于使用的方法也很简单。</p>
-</blockquote>
-<h4 id="集合中的NSPredicate">集合中的NSPredicate</h4><p>Foundation提供使用谓词（predicate）来过滤NSArray／NSMutableArray&amp;NSSet／NSMutableSet的方法。</p>
-<p>首先来一段比较简单的代码：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSPredicate</span> *predicate = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"SELF IN %@"</span>, @[<span class="string">@"keso"</span>, <span class="string">@"FlyElephant"</span>, <span class="string">@"博客园"</span>]];</span><br><span class="line"><span class="keyword">if</span> ([predicate evaluateWithObject:<span class="string">@"keso"</span>]) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"keso"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>第一行代码初始化一个查询条件，第二句就是判断数据在不在结果集中，跟SQL基本上一样，通过IN就能大概了解其功能，SELF表示本身，非常常用。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NSPredicate/">NSPredicate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/07/22/NSPredicate-usage/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
