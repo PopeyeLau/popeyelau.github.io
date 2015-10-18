@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>laravel-steup | 厌恶争执，不善言说</title>
+  <title>Laravel安装及简单使用 | 厌恶争执，不善言说</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Laravel安装
 使用composer创建项目
@@ -28,7 +28,7 @@ $ php artisan serve
 创建控制器
 $ php artisan make:controller IndexViewContr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="laravel-steup">
+<meta property="og:title" content="Laravel安装及简单使用">
 <meta property="og:url" content="https://popeyelau.github.io/2015/10/18/laravel-steup/index.html">
 <meta property="og:site_name" content="厌恶争执，不善言说">
 <meta property="og:description" content="Laravel安装
@@ -53,9 +53,9 @@ $ php artisan serve
 
 创建控制器
 $ php artisan make:controller IndexViewContr">
-<meta property="og:updated_time" content="2015-10-18T03:38:40.000Z">
+<meta property="og:updated_time" content="2015-10-18T03:44:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="laravel-steup">
+<meta name="twitter:title" content="Laravel安装及简单使用">
 <meta name="twitter:description" content="Laravel安装
 使用composer创建项目
 
@@ -307,7 +307,7 @@ $ php artisan make:controller IndexViewContr">
         
   
     <h1 class="article-title" itemprop="name">
-      laravel-steup
+      Laravel安装及简单使用
     </h1>
   
 
@@ -371,7 +371,7 @@ $ php artisan make:controller IndexViewContr">
 <li>变量传递的一些写法</li>
 </ul>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//控制器about方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">about</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	 <span class="variable">$firstName</span> = <span class="string">'Popeye'</span>;</span><br><span class="line">	 <span class="variable">$lastName</span> = <span class="string">'Lau'</span>;	 </span><br><span class="line">	 <span class="keyword">return</span> view(<span class="string">'html/about'</span>)</span><br><span class="line">	     -&gt;with(<span class="string">'firstName'</span>,<span class="variable">$firstName</span>)</span><br><span class="line">	     -&gt;with(<span class="string">'lastName'</span>,<span class="variable">$lastName</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">about</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">   <span class="keyword">return</span> view(<span class="string">'html/about'</span>)-&gt;with([</span><br><span class="line">       <span class="string">'firstName'</span> =&gt; <span class="string">'Popeye'</span>,</span><br><span class="line">       <span class="string">'lastName'</span> =&gt; <span class="string">'Lau'</span></span><br><span class="line">   ]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">about</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="variable">$data</span> = [];</span><br><span class="line">	<span class="variable">$data</span>[<span class="string">'firstName'</span>] = <span class="string">'Popeye'</span>;</span><br><span class="line">	<span class="variable">$data</span>[<span class="string">'lastName'</span>] = <span class="string">'Lau'</span>;</span><br><span class="line">	<span class="keyword">return</span> view(<span class="string">'html/about'</span>,<span class="variable">$data</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">about</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="variable">$firstName</span> = <span class="string">'Popeye'</span>;</span><br><span class="line">	<span class="variable">$lastName</span> = <span class="string">'Lau'</span>;</span><br><span class="line">	<span class="keyword">return</span> view(<span class="string">'html/about'</span>,compact(<span class="string">'firstName'</span>,<span class="string">'lastName'</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//视图 </span><br><span class="line"></span><br><span class="line">//转义输出 &#123;&#123;$<span class="function_or_atom">firstName</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line">//不转义输出 &#123;<span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>$<span class="function_or_atom">firstName</span><span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>&#125;</span><br><span class="line">&lt;<span class="function_or_atom">h1</span>&gt;<span class="variable">About</span> &#123;&#123;$<span class="function_or_atom">firstName</span>&#125;&#125; &#123;&#123;$<span class="function_or_atom">lastName</span>&#125;&#125;&lt;/<span class="function_or_atom">h1</span>&gt;</span><br><span class="line">&lt;<span class="function_or_atom">h1</span>&gt;<span class="variable">About</span> &#123;<span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>$<span class="function_or_atom">firstName</span><span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>&#125; &#123;<span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>$<span class="function_or_atom">lastName</span><span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>&#125;&lt;/<span class="function_or_atom">h1</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//视图 </span><br><span class="line">//转义输出 &#123;&#123;$<span class="function_or_atom">firstName</span>&#125;&#125;</span><br><span class="line">//不转义输出 &#123;<span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>$<span class="function_or_atom">firstName</span><span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>&#125;</span><br><span class="line">&lt;<span class="function_or_atom">h1</span>&gt;<span class="variable">About</span> &#123;&#123;$<span class="function_or_atom">firstName</span>&#125;&#125; &#123;&#123;$<span class="function_or_atom">lastName</span>&#125;&#125;&lt;/<span class="function_or_atom">h1</span>&gt;</span><br><span class="line">&lt;<span class="function_or_atom">h1</span>&gt;<span class="variable">About</span> &#123;<span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>$<span class="function_or_atom">firstName</span><span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>&#125; &#123;<span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>$<span class="function_or_atom">lastName</span><span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>&#125;&lt;/<span class="function_or_atom">h1</span>&gt;</span><br></pre></td></tr></table></figure>
 <hr>
 <h3 id="Blade模板">Blade模板</h3><blockquote>
 <p>还没时间看来着..</p>
@@ -416,7 +416,7 @@ $ php artisan make:controller IndexViewContr">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="laravel-steup" data-title="laravel-steup" data-url="https://popeyelau.github.io/2015/10/18/laravel-steup/"></div>
+	<div class="ds-thread" data-thread-key="laravel-steup" data-title="Laravel安装及简单使用" data-url="https://popeyelau.github.io/2015/10/18/laravel-steup/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
