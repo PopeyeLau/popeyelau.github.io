@@ -53,7 +53,7 @@ $ php artisan serve
 
 创建控制器
 $ php artisan make:controller IndexViewContr">
-<meta property="og:updated_time" content="2015-10-18T03:44:26.000Z">
+<meta property="og:updated_time" content="2015-10-18T03:46:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Laravel安装及简单使用">
 <meta name="twitter:description" content="Laravel安装
@@ -366,7 +366,7 @@ $ php artisan make:controller IndexViewContr">
 <ul>
 <li>路由写法</li>
 </ul>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//匿名函数</span></span><br><span class="line">Route::<span class="keyword">get</span>(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> view(<span class="string">'welcome'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*调用IndexViewController的index方法*/</span></span><br><span class="line">Route::<span class="keyword">get</span>(<span class="string">'/'</span>,<span class="string">'IndexViewController@index'</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//匿名函数</span></span><br><span class="line">Route::<span class="keyword">get</span>(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> view(<span class="string">'welcome'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*调用IndexViewController的index方法*/</span></span><br><span class="line">Route::<span class="keyword">get</span>(<span class="string">'/'</span>,<span class="string">'IndexViewController@index'</span>);</span><br><span class="line"><span class="comment">/*调用IndexViewController的about方法*/</span></span><br><span class="line">Route::<span class="keyword">get</span>(<span class="string">'/about'</span>,<span class="string">'IndexViewController@about'</span>);</span><br></pre></td></tr></table></figure>
 <ul>
 <li>变量传递的一些写法</li>
 </ul>
