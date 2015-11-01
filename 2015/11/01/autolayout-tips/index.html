@@ -3,18 +3,55 @@
 <head>
   <meta charset="utf-8">
   
-  <title>相册 | 厌恶争执，不善言说</title>
+  <title>Autolayout按比例布局 | 厌恶争执，不善言说</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="图片来自instagram，正在加载中…">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://popeyelau.github.io/instagram/index.html">
+  <meta name="description" content="记录一下..
+今天逛博客,发现一个有趣的布局实现 关于适配
+主要就是根据设计师提供的图片按比例进行约束.
+例: UI提供一张iPhone5s的图,某一个view高度为200.
+
+使用storyboard
+
+这时就可以把这个view的高度设为与控制器视图等高,然后设置Multiplier为200:1136当切换不同设备时就可以保持相应的比例.
+
+
+使用Masonry
+
+1234[view mas_m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Autolayout按比例布局">
+<meta property="og:url" content="https://popeyelau.github.io/2015/11/01/autolayout-tips/index.html">
 <meta property="og:site_name" content="厌恶争执，不善言说">
-<meta property="og:description" content="图片来自instagram，正在加载中…">
-<meta property="og:updated_time" content="2015-07-16T04:18:19.000Z">
+<meta property="og:description" content="记录一下..
+今天逛博客,发现一个有趣的布局实现 关于适配
+主要就是根据设计师提供的图片按比例进行约束.
+例: UI提供一张iPhone5s的图,某一个view高度为200.
+
+使用storyboard
+
+这时就可以把这个view的高度设为与控制器视图等高,然后设置Multiplier为200:1136当切换不同设备时就可以保持相应的比例.
+
+
+使用Masonry
+
+1234[view mas_m">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/7a4027b5jw1exlrusyl3nj2071070q3f.jpg">
+<meta property="og:updated_time" content="2015-11-01T14:52:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="图片来自instagram，正在加载中…">
+<meta name="twitter:title" content="Autolayout按比例布局">
+<meta name="twitter:description" content="记录一下..
+今天逛博客,发现一个有趣的布局实现 关于适配
+主要就是根据设计师提供的图片按比例进行约束.
+例: UI提供一张iPhone5s的图,某一个view高度为200.
+
+使用storyboard
+
+这时就可以把这个view的高度设为与控制器视图等高,然后设置Multiplier为200:1136当切换不同设备时就可以保持相应的比例.
+
+
+使用Masonry
+
+1234[view mas_m">
   
     <link rel="alternative" href="/atom.xml" title="厌恶争执，不善言说" type="application/atom+xml">
   
@@ -227,7 +264,13 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-instagram" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-autolayout-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/01/autolayout-tips/" class="article-date">
+  	<time datetime="2015-11-01T12:43:05.000Z" itemprop="datePublished">2015-11-01</time>
+</a>
+    </div>
   
   <div class="article-inner">
     
@@ -238,7 +281,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      相册
+      Autolayout按比例布局
     </h1>
   
 
@@ -246,6 +289,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Autolayout/">Autolayout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Masonry/">Masonry</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -254,15 +301,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><div class="instagram" data-client-id="dd15f3e5e6d64dd09d76d2df23513c8b" data-user-id="339198248"><br>    <a href="http://instagram.com/popeyelau" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a><br></div></p>
-<script src="/js/jquery.lazyload.js"></script>
-<script src="/js/instagram.js"></script>
+        <p>记录一下..</p>
+<p>今天逛博客,发现一个有趣的布局实现 <a href="http://bawn.github.io/ios/2015/04/03/adaptation.html" title="关于适配" target="_blank" rel="external">关于适配</a></p>
+<p>主要就是根据设计师提供的图片按比例进行约束.</p>
+<p>例: UI提供一张iPhone5s的图,某一个view高度为<code>200</code>.</p>
+<ul>
+<li>使用storyboard</li>
+</ul>
+<p>这时就可以把这个view的高度设为与控制器视图等高,然后设置<code>Multiplier</code>为<code>200:1136</code><br>当切换不同设备时就可以保持相应的比例.</p>
+<p><img src="http://ww2.sinaimg.cn/large/7a4027b5jw1exlrusyl3nj2071070q3f.jpg" alt="约束" title="设置约束"></p>
+<ul>
+<li>使用Masonry</li>
+</ul>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">[view mas_makeConstraints:^<span class="list">(<span class="keyword">MASConstraintMaker</span> *make)</span> <span class="collection">&#123;</span><br><span class="line">     make.top.left.right.equalTo<span class="list">(<span class="keyword">self.view</span>)</span><span class="comment">;</span></span><br><span class="line">     make.height.equalTo<span class="list">(<span class="keyword">self.view</span>)</span>.multipliedBy<span class="list">(<span class="number">200</span>/<span class="number">1136</span>)</span><span class="comment">;</span></span><br><span class="line">&#125;</span>]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2015/10/18/laravel-steup/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Laravel安装及简单使用</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -286,7 +354,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="instagram" data-title="相册" data-url="https://popeyelau.github.io/instagram/index.html"></div>
+	<div class="ds-thread" data-thread-key="autolayout-tips" data-title="Autolayout按比例布局" data-url="https://popeyelau.github.io/2015/11/01/autolayout-tips/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -330,7 +398,7 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

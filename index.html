@@ -120,7 +120,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Autolayout/" style="font-size: 16.67px;">Autolayout</a> <a href="/tags/Blocks/" style="font-size: 10px;">Blocks</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Masonry/" style="font-size: 16.67px;">Masonry</a> <a href="/tags/NSDate/" style="font-size: 10px;">NSDate</a> <a href="/tags/Objective-C/" style="font-size: 13.33px;">Objective-C</a> <a href="/tags/Objective-c/" style="font-size: 16.67px;">Objective-c</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a>
+						<a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Autolayout/" style="font-size: 17.5px;">Autolayout</a> <a href="/tags/Blocks/" style="font-size: 10px;">Blocks</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Masonry/" style="font-size: 17.5px;">Masonry</a> <a href="/tags/NSDate/" style="font-size: 10px;">NSDate</a> <a href="/tags/Objective-C/" style="font-size: 12.5px;">Objective-C</a> <a href="/tags/Objective-c/" style="font-size: 15px;">Objective-c</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a>
 					</div>
 				</section>
 				
@@ -228,6 +228,73 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-autolayout-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/01/autolayout-tips/" class="article-date">
+  	<time datetime="2015-11-01T12:43:05.000Z" itemprop="datePublished">2015-11-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/01/autolayout-tips/">Autolayout按比例布局</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>记录一下..</p>
+<p>今天逛博客,发现一个有趣的布局实现 <a href="http://bawn.github.io/ios/2015/04/03/adaptation.html" title="关于适配" target="_blank" rel="external">关于适配</a></p>
+<p>主要就是根据设计师提供的图片按比例进行约束.</p>
+<p>例: UI提供一张iPhone5s的图,某一个view高度为<code>200</code>.</p>
+<ul>
+<li>使用storyboard</li>
+</ul>
+<p>这时就可以把这个view的高度设为与控制器视图等高,然后设置<code>Multiplier</code>为<code>200:1136</code><br>当切换不同设备时就可以保持相应的比例.</p>
+<p><img src="http://ww2.sinaimg.cn/large/7a4027b5jw1exlrusyl3nj2071070q3f.jpg" alt="约束" title="设置约束"></p>
+<ul>
+<li>使用Masonry</li>
+</ul>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">[view mas_makeConstraints:^<span class="list">(<span class="keyword">MASConstraintMaker</span> *make)</span> <span class="collection">&#123;</span><br><span class="line">     make.top.left.right.equalTo<span class="list">(<span class="keyword">self.view</span>)</span><span class="comment">;</span></span><br><span class="line">     make.height.equalTo<span class="list">(<span class="keyword">self.view</span>)</span>.multipliedBy<span class="list">(<span class="number">200</span>/<span class="number">1136</span>)</span><span class="comment">;</span></span><br><span class="line">&#125;</span>]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Autolayout/">Autolayout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Masonry/">Masonry</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-laravel-steup" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -297,8 +364,8 @@
 <ul>
 <li>变量传递的一些写法</li>
 </ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//控制器about方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">about</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	 <span class="variable">$firstName</span> = <span class="string">'Popeye'</span>;</span><br><span class="line">	 <span class="variable">$lastName</span> = <span class="string">'Lau'</span>;	 </span><br><span class="line">	 <span class="keyword">return</span> view(<span class="string">'html/about'</span>)</span><br><span class="line">	     -&gt;with(<span class="string">'firstName'</span>,<span class="variable">$firstName</span>)</span><br><span class="line">	     -&gt;with(<span class="string">'lastName'</span>,<span class="variable">$lastName</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">about</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">   <span class="keyword">return</span> view(<span class="string">'html/about'</span>)-&gt;with([</span><br><span class="line">       <span class="string">'firstName'</span> =&gt; <span class="string">'Popeye'</span>,</span><br><span class="line">       <span class="string">'lastName'</span> =&gt; <span class="string">'Lau'</span></span><br><span class="line">   ]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">about</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="variable">$data</span> = [];</span><br><span class="line">	<span class="variable">$data</span>[<span class="string">'firstName'</span>] = <span class="string">'Popeye'</span>;</span><br><span class="line">	<span class="variable">$data</span>[<span class="string">'lastName'</span>] = <span class="string">'Lau'</span>;</span><br><span class="line">	<span class="keyword">return</span> view(<span class="string">'html/about'</span>,<span class="variable">$data</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">about</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="variable">$firstName</span> = <span class="string">'Popeye'</span>;</span><br><span class="line">	<span class="variable">$lastName</span> = <span class="string">'Lau'</span>;</span><br><span class="line">	<span class="keyword">return</span> view(<span class="string">'html/about'</span>,compact(<span class="string">'firstName'</span>,<span class="string">'lastName'</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//视图 </span><br><span class="line">//转义输出 &#123;&#123;$<span class="function_or_atom">firstName</span>&#125;&#125;</span><br><span class="line">//不转义输出 &#123;<span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>$<span class="function_or_atom">firstName</span><span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>&#125;</span><br><span class="line">&lt;<span class="function_or_atom">h1</span>&gt;<span class="variable">About</span> &#123;&#123;$<span class="function_or_atom">firstName</span>&#125;&#125; &#123;&#123;$<span class="function_or_atom">lastName</span>&#125;&#125;&lt;/<span class="function_or_atom">h1</span>&gt;</span><br><span class="line">&lt;<span class="function_or_atom">h1</span>&gt;<span class="variable">About</span> &#123;<span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>$<span class="function_or_atom">firstName</span><span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>&#125; &#123;<span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>$<span class="function_or_atom">lastName</span><span class="exclamation_mark">!</span><span class="exclamation_mark">!</span>&#125;&lt;/<span class="function_or_atom">h1</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">//控制器about方法</span><br><span class="line">public <span class="keyword">function</span> about()</span><br><span class="line">&#123;</span><br><span class="line">	 <span class="variable">$firstName</span> = <span class="string">'Popeye'</span>;</span><br><span class="line">	 <span class="variable">$lastName</span> = <span class="string">'Lau'</span>;	 </span><br><span class="line">	 return view(<span class="string">'html/about'</span>)</span><br><span class="line">	     -&gt;with(<span class="string">'firstName'</span>,<span class="variable">$firstName</span>)</span><br><span class="line">	     -&gt;with(<span class="string">'lastName'</span>,<span class="variable">$lastName</span>);</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">function</span> about()</span><br><span class="line">&#123;</span><br><span class="line">   return view(<span class="string">'html/about'</span>)-&gt;with([</span><br><span class="line">       <span class="string">'firstName'</span> =&gt; <span class="string">'Popeye'</span>,</span><br><span class="line">       <span class="string">'lastName'</span> =&gt; <span class="string">'Lau'</span></span><br><span class="line">   ]);</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">function</span> about()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="variable">$data</span> = [];</span><br><span class="line">	<span class="variable">$data</span>[<span class="string">'firstName'</span>] = <span class="string">'Popeye'</span>;</span><br><span class="line">	<span class="variable">$data</span>[<span class="string">'lastName'</span>] = <span class="string">'Lau'</span>;</span><br><span class="line">	return view(<span class="string">'html/about'</span>,<span class="variable">$data</span>);</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">function</span> about()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="variable">$firstName</span> = <span class="string">'Popeye'</span>;</span><br><span class="line">	<span class="variable">$lastName</span> = <span class="string">'Lau'</span>;</span><br><span class="line">	return view(<span class="string">'html/about'</span>,compact(<span class="string">'firstName'</span>,<span class="string">'lastName'</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//视图 </span><br><span class="line">//转义输出 &#123;&#123;<span class="variable">$firstName</span>&#125;&#125;</span><br><span class="line">//不转义输出 &#123;!!<span class="variable">$firstName</span>!!&#125;</span><br><span class="line">&lt;h1&gt;About &#123;&#123;<span class="variable">$firstName</span>&#125;&#125; &#123;&#123;<span class="variable">$lastName</span>&#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;h1&gt;About &#123;!!<span class="variable">$firstName</span>!!&#125; &#123;!!<span class="variable">$lastName</span>!!&#125;&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
 <hr>
 <h3 id="Blade模板">Blade模板</h3><blockquote>
 <p>还没时间看来着..</p>
@@ -866,101 +933,10 @@
 
 
   
-    <article id="post-how-to-use-gcd" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2015/07/14/how-to-use-gcd/" class="article-date">
-  	<time datetime="2015-07-14T10:16:10.000Z" itemprop="datePublished">2015-07-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/14/how-to-use-gcd/">GCD常用方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>详细介绍参见：<a href="http://blog.devtang.com/blog/2012/02/22/use-gcd/" title="使用GCD">使用GCD</a></li>
-</ul>
-<hr>
-<ul>
-<li><h4 id="队列类型">队列类型</h4><ul>
-<li><h5 id="并发队列：">并发队列：</h5><ul>
-<li>可以让多个任务并发执行（自动开启多个线程同时执行）只能在异步方式中使用（dispatch_async）</li>
-</ul>
-</li>
-<li><h5 id="串行队列：">串行队列：</h5><ul>
-<li>让任务一个接一个执行（一个任务执行完成后，再执行下一个任务）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><h4 id="同步方式：只能在当前线程中执行任务，不具务开启新线程的能力">同步方式：只能在当前线程中执行任务，不具务开启新线程的能力</h4><ul>
-<li><code>dispatch_sync(dispatch_queue_t queue, ^(void)block)</code></li>
-</ul>
-</li>
-<li><h4 id="异步方式：可以在新的线程中执行任务，具备开启新线程的能力">异步方式：可以在新的线程中执行任务，具备开启新线程的能力</h4><ul>
-<li><code>dispatch_async(dispatch_queue_t queue, ^(void)block)</code></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><h4 id="获取全局的并发队列">获取全局的并发队列</h4><ul>
-<li><code>DISPATCH_QUEUE_PRIORITY_DEFAULT</code> 默认优先级</li>
-<li><code>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</code></li>
-</ul>
-</li>
-<li><h4 id="手动创建串行队列">手动创建串行队列</h4><p><code>dispatch_queue_t queue = dispatch_queue_create(&quot;队列名称&quot;, NULL);</code></p>
-</li>
-<li><h4 id="主队列（添加到主队列中的任务，会自动放在主线程中执行）">主队列（添加到主队列中的任务，会自动放在主线程中执行）</h4><p><code>dispatch_queue_t queue = dispatch_get_main_queue();</code></p>
-</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GCD/">GCD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/07/14/how-to-use-gcd/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
