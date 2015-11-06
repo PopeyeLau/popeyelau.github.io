@@ -36,7 +36,7 @@
 
 1234[view mas_m">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/7a4027b5jw1exlrusyl3nj2071070q3f.jpg">
-<meta property="og:updated_time" content="2015-11-01T14:52:39.000Z">
+<meta property="og:updated_time" content="2015-11-06T00:38:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Autolayout按比例布局">
 <meta name="twitter:description" content="记录一下..
@@ -313,7 +313,7 @@
 <ul>
 <li>使用Masonry</li>
 </ul>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">[view mas_makeConstraints:^<span class="list">(<span class="keyword">MASConstraintMaker</span> *make)</span> <span class="collection">&#123;</span><br><span class="line">     make.top.left.right.equalTo<span class="list">(<span class="keyword">self.view</span>)</span><span class="comment">;</span></span><br><span class="line">     make.height.equalTo<span class="list">(<span class="keyword">self.view</span>)</span>.multipliedBy<span class="list">(<span class="number">200</span>/<span class="number">1136</span>)</span><span class="comment">;</span></span><br><span class="line">&#125;</span>]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">[view mas_makeConstraints:^<span class="list">(<span class="keyword">MASConstraintMaker</span> *make)</span> <span class="collection">&#123;</span><br><span class="line">     make.top.left.right.equalTo<span class="list">(<span class="keyword">self.view</span>)</span><span class="comment">;</span></span><br><span class="line">     make.height.equalTo<span class="list">(<span class="keyword">self.view</span>)</span>.multipliedBy<span class="list">(<span class="number">200.0</span>/<span class="number">1136.0</span>)</span><span class="comment">;</span></span><br><span class="line">&#125;</span>]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
